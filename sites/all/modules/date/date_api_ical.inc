@@ -307,7 +307,6 @@ function date_ical_parse($icaldatafolded = array()) {
           $parse_result = date_ical_parse_rrule($field, $data);
           break;
 
-        case 'STATUS':
         case 'SUMMARY':
         case 'DESCRIPTION':
           $parse_result = date_ical_parse_text($field, $data);
@@ -644,7 +643,7 @@ function date_ical_escape_text($text) {
   $text = preg_replace("/\\\b/", "\\\\", $text);
   $text = str_replace(",", "\,", $text);
   $text = str_replace(";", "\;", $text);
-  $text = str_replace("\n", "\\n\r\n ", $text);
+  $text = str_replace("\n", "\\n ", $text);
   return trim($text);
 }
 

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="AUTHOR" content="Paula Gray-Overtoom">
+<title>Key to the Yearbook Index Search</title>
+<style type="text/css">
+body{
+background-image: url("http://mcpl.info/sites/default/files/backTexture_lighter.jpg");
+font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+padding:0;
+margin:0;
+}
+
+a{
+color: #0066CC;
+}
+
+a:hover{
+color: #339900;
+}
+
+#page-wrapper{
+width: 1000px;
+margin-left: auto;
+margin-right: auto;
+background-color: #FFF;
+border-left: 1px solid #777;
+-webkit-box-shadow: 6px 6px 6px #000;
+-moz-box-shadow: 6px 6px 6px #000;
+box-shadow: 6px 6px 6px #000;
+}
+
+#header{
+background-color: #339900;
+border-bottom: 3px solid #000;
+margin: 0;
+height: 108px;
+}
+
+#header img{
+position: relative;
+top: 16px;
+left: 6px;
+}
+
+#content{
+text-align: center;
+}
+
+#content a{
+font-weight: bold;
+}
+
+#footer{
+background-color: #339900;
+margin: 0;
+padding: 8px 14px 8px 14px;
+}
+
+#footer a{
+color: #FFF;
+text-decoration: none;
+}
+
+#footer a:hover{
+color: #FFF;
+text-decoration: underline;
+}
+
+#footer p{
+margin:0;
+padding:0;
+}
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<div id="page-wrapper">
+<div id="header">
+ <a href="http://mcpl.info" title="Home" rel="home" id="logo"><img src="http://mcpl.info/sites/default/files/mcpl_logo.png" alt="Home"></a>
+</div>
+
+<div id="content">
+
+<p><br>Every name entered is identified by a status code:</p><p>S = Student <br>S12 = Student and class: S12 = a senior, S11 = a junior, etc.<br>F = Faculty <br>A = Administrator<br>B = Bus Driver<br>C = Cook<br>J = Janitor<br>L = Librarian<br>N = Nurse<br>O = Other<br><br></p>
+
+</div>
+<p></p>
+
+
+</body>
+</html>
+
+

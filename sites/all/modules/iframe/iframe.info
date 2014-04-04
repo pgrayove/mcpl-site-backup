@@ -1,0 +1,20 @@
+name = IFrame
+description = Defines simple iframe field types as CCK submodule.
+dependencies[] = content
+package = CCK
+core = 6.x
+
+
+; Information added by drupal.org packaging script on 2010-11-10
+version = "6.x-1.7"
+core = "6.x"
+project = "iframe"
+datestamp = "1289349101"
+
+
+; Information added by drupal.org packaging script on 2011-12-18
+version = "6.x-1.8"
+core = "6.x"
+project = "iframe"
+datestamp = "1324170440"
+

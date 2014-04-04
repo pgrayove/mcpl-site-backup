@@ -1,0 +1,61 @@
+div.frame {
+	position: absolute;
+	left: 100;
+	width: 600px;
+	height: 400px;
+	z-index: 100;
+}
+
+div.timeline {
+}
+
+#main  {
+  width: 510px;
+  position: relative;
+  left: 200px;
+  top: 200px;
+}
+
+#content-slider {
+  width: 490px;
+  height: 6px;
+  margin: 5px;
+  background: #BBBBBB;
+  position: relative;
+}
+
+.ui-slider-handle {
+  width: 8px;
+  height: 14px;
+  position: absolute;
+  top: -4px;
+  background: #478AFF;
+  border: solid 1px black;
+}
+
+#content-scroll {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+#content-holder {
+  width: 17000px;
+  height: 270px;
+}
+
+.content-item {
+  /*width: 250px;*/
+  height: 20px;
+  padding: 5px;
+  /*float: left;*/
+}
+
+#meta-container{
+  position: relative;
+  left: auto;
+  right: auto;
+  top: 200px;
+}

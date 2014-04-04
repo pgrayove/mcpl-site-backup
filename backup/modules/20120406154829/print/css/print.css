@@ -1,0 +1,115 @@
+
+body {
+  margin: 1em;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+th {
+  text-align: left; /* LTR */
+  color: #006;
+  border-bottom: 1px solid #ccc;
+}
+tr.odd {
+  background-color: #ddd;
+}
+tr.even {
+  background-color: #fff;
+}
+td {
+  padding: 5px;
+}
+#menu {
+  visibility: hidden;
+}
+#main {
+  margin: 1em;
+}
+a:link {color: #000;}
+a:visited {color: #000;}
+a:hover {color: #00f;}
+a:link img, a:visited img {border: 0;}
+.print-footnote {font-size: xx-small;}
+img.print-logo {border: 0;}
+.print-site_name {}
+.print-breadcrumb {font-size: x-small;}
+.print-title {}
+.print-submitted {font-size: small;}
+.print-created {font-size: small;}
+.print-taxonomy {
+  text-align: right;
+}
+.print-taxonomy li {display: inline;}
+.print-content {}
+.print-hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  color: #9E9E9E;
+  background-color: #9E9E9E;
+}
+.print-message {
+  border: medium dotted blue;
+  padding: 1em;
+}
+.print-source_url {font-size: small;}
+.print-links {font-size: small;}
+.print-footer {text-align: center;}
+
+/*Customizations*/
+div.view-staff-picks h3{
+	border-bottom: 1px solid #000;
+}
+
+div.view-staff-picks div.views-row{
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left:auto;
+	margin-right: auto;
+	border-top: 1px solid #CCC;
+	/* min-height: 150px; */
+}
+
+div.view-staff-picks div.views-row-first{
+	border-top:none;
+}
+
+div.view-staff-picks div.views-field-body .type-Staff.Picks.Item p{
+	min-height: 100px
+}
+
+div.view-staff-picks div.views-row img{
+	display: block;
+	margin-bottom: 1em;
+}
+
+div.view-staff-picks .views-field-title a{
+	font-weight: bolder;
+	font-size: 125%;
+	font-style: italic;
+}
+
+div.view-staff-picks .views-field-title a{
+	margin-left:-1em;
+}
+
+div.view-staff-picks div.views-field-nothing{
+	display: inline;
+}
+
+div.view-staff-picks div.views-field-body .type-Staff.Item p{
+	width:700px;
+}
+
+div.view-staff-picks .type-Staff.Picks.Description{
+	display: none;
+}
+
+div.view-staff-picks div.views-field-body .type-Staff.Picks.Description{
+	display: block;
+	font-style: italic;
+}
+
+div.view-staff-picks div.views-field-body .type-Staff.Picks.Description p{
+	margin:0 auto 2em auto;
+}

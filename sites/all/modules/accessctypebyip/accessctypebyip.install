@@ -1,0 +1,48 @@
+<?php
+// $Id: accessctypebyip.install,v 1.2.2.2 2010/11/16 21:36:38 desecho Exp $
+
+/**
+ * @file
+ * Install and uninstall functions for the accessctypebyip module.
+ */
+
+
+/**
+ * Implementation of hook_install().
+ */
+function accessctypebyip_install() {
+  drupal_install_schema('accessctypebyip');
+  db_query("INSERT INTO {accessctypebyip} (uid, type, ips, hostnames) VALUES (1, 'all', '0.0.0.0-255.255.255.255' , '')");
+  db_query("INSERT INTO {variable} (name, value) VALUES ('accessctypebyip_1_all_ips', 's:23:\"0.0.0.0-255.255.255.255\";')");
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function accessctypebyip_uninstall() {
+  drupal_uninstall_schema('accessctypebyip');
+  // Delete variables.
+  $name = 'accessctypebyip%';
+  db_query("DELETE FROM {variable} WHERE name LIKE '%s'", $name);
+  cache_clear_all('variables', 'cache');
+  // Delete main data cache
+  cache_clear_all('accessctypebyip_db_data', 'cache');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function accessctypebyip_schema() {
+  $schema['accessctypebyip'] = array(
+    'fields' => array(
+      'id'     => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'auto_increment' => TRUE),
+      'uid'     => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+      'type' => array('type' => 'varchar', 'length' => 32 , 'not null' => TRUE),
+      'ips' => array('type' => 'text', 'not null' => TRUE),
+      'hostnames' => array('type' => 'text', 'not null' => TRUE),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}

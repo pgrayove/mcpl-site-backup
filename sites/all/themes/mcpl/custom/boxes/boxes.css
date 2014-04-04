@@ -1,0 +1,17 @@
+/*!
+ * Dynamic display block module template: image-box - Cascading Style Sheet 
+ * Copyright(c) 2008 - 2009 P. Blaauw All rights reserved. 
+ * Version 1.1(11-FEB-2009) 
+ */ 
+.image-box-white-grey-white-10 .image-box-corner-wrapper .image-box-top-side,.image-box-white-grey-white-10 .image-box-corner-wrapper .image-box-bottom-side{height:11px;position:relative;}
+.image-box-white-grey-white-10 .image-box-top-side{font-size:1px;}
+.image-box-white-grey-white-10 .image-box-bottom-side{font-size:1px;}
+.image-box-white-grey-white-10 .image-box-left-side{}
+.image-box-white-grey-white-10 .image-box-right-side{}
+.image-box-white-grey-white-10 .image-box-corner-wrapper{}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .left,.image-box-white-grey-white-10 .image-box-corner-wrapper .right{position:absolute;top:0;height:11px;width:11px;}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .left{left:0;}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .right{right:0;background-position:-11px 0;}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .image-box-bottom-side .left{background-position:0 -11px;}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .image-box-bottom-side .right{background-position:-11px -11px;}
+.image-box-white-grey-white-10 .image-box-corner-wrapper .image-box-right-side{padding:0 11px;}

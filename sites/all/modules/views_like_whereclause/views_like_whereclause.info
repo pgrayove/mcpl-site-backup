@@ -1,0 +1,6 @@
+; $Id$
+name = Views Alter Where Clause
+description = Alter the Where Clause in Views to use LIKE instead of =.
+core = 6.x
+dependencies[] = views
+package = Views

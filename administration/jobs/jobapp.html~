@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" lang="en">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../generalstyle.css" />
+<meta name="AUTHOR" content="Paula Gray-Overtoom" />
+
+<title>Job Application</title>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18934311-5']);
+  _gaq.push(['_setDomainName', '.monroe.lib.in.us']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<div id="CONTENT">
+
+<a name="content"></a>
+
+  <p class="bold">Candidates must complete all questions on this application. <br  />
+  Incomplete applications may not be accepted. </p>
+  <span class="large">SECTION 1</span>
+  <br /><br />
+  <form action="http://www.monroe.lib.in.us/cgi-bin/jobapp.pl" method="post">
+    Name:<br />
+      Last: 
+      <input name="lastname" type="text" size="30" maxlength="100" />
+      <br />
+      First: 
+      <input name="firstname" type="text" size="30" maxlength="100" />
+      Middle Initial: 
+      <input name="middle" type="text" size="1" maxlength="1" />
+      <br />
+      <br />
+      Address:<br />
+      Street: 
+      <input name="address" type="text" size="50" maxlength="150" />
+      Apt. Number: 
+      <input name="aptnum" type="text" size="5" maxlength="20" />
+      <br />
+      City: 
+      <input name="city" type="text" size="30" maxlength="100" />
+      State: 
+      <input name="state" type="text" size="30" maxlength="100" />
+      Zip: 
+      <input name="zip" type="text" size="10" maxlength="10" />
+      <br />
+      <br />
+      Phone Number: 
+      <input name="phone" type="text" size="14" maxlength="30" />
+	  Alternate Number: 
+      <input name="p2" type="text" size="14" maxlength="30" /><br /><br />
+      Email: 
+      <input name="email" type="text" size="30" maxlength="100" />
+      <br />
+      <br />
+      Position applied for: 
+      <input name="position" type="text" size="50" maxlength="150" />
+      <br />
+      (Complete separate application for each position 
+      applied.) <br />
+      <br />
+      Date of birth if under age 18: 
+      <input name="dob" type="text" size="10" maxlength="10" />
+      <br />
+      <br />
+      Are you prevented from lawfully becoming employed in this country because of Visa or Immigration Status? <br />
+	  (Proof of citizenship or immigration 
+      status will be required upon employment)<br /> 
+      <input name="eligible" type="radio" value="yes" />
+      Yes 
+      <input name="eligible" type="radio" value="no" />
+    No <br />Comments: 
+    <input name="comment" type="text" size="30" maxlength="100" />
+      <br />
+      <br />
+      How did you learn of this opening? 
+      <input name="learn" type="text" size="50" maxlength="150" />
+      <br />
+      <br />
+      How long would you plan to stay in this position? 
+      <input name="long" type="text" size="50" maxlength="150" />
+      <br />
+      <br />
+      If hired, what date could you begin work? 
+      <input name="date" type="text" size="30" maxlength="100" />
+      <br />
+      <br />
+      Were you previously employed by Monroe County 
+      Public Library (MCPL)? 
+      <input name="employed" type="radio" value="yes" />&nbsp;Yes 
+      <input name="employed" type="radio" value="no" />&nbsp;No<br />
+      Volunteered? 
+      <input name="volunteer" type="radio" value="yes" />
+      Yes 
+      <input name="volunteer" type="radio" value="no" />
+    No <br />If yes, dates and department: 
+    <input name="whenemp" type="text" size="50" maxlength="150" />
+      <br />
+      <br />
+      List any relatives or members of the immediate 
+      household currently working for MCPL: 
+      <input name="relatives" type="text" size="30" maxlength="150" />
+      <br />
+      <br />
+      
+    A driver's license and/or proof of auto insurance may be required for specific positions due to job related responsibilities.  Do you have a current valid driver's license?<br /> 
+    <input name="drive" type="radio" value="yes" /> Yes 
+  <input name="drive" type="radio" value="no" /> No
+   
+  <br /><br />
+  Have you ever been convicted of, or are you currently charged with, any crime or has your driver's license ever been suspended?  (A charge or conviction will not necessarily disqualify an applicant from employment)<br />
+  <input name="convict" type="radio" value="yes" /> Yes 
+  <input name="convict" type="radio" value="no" /> No<br />
+  If yes, please explain: <br />
+  <textarea name="comment4" cols="60" rows="3"></textarea>
+  <br /><br />
+  We may contact previous employers listed on the application and/or resume, or provided as a reference, unless you indicate those you do not want us to contact. <br />
+  DO NOT Contact: <input name="nocontact" type="text" size="30" maxlength="250" /><br />
+  REASON: <input name="reason1" type="text" size="50" maxlength="300" />
+  <br /><br />
+  Have you ever been discharged or resigned as a result of or while under investigation for violation of any employer rules or policies?<br />
+  <input name="rules" type="radio" value="yes" /> Yes 
+  <input name="rules" type="radio" value="no" /> No<br />
+  If yes, reason: 
+  <input name="reason2" type="text" size="50" maxlength="300" />
+  <br /><br />
+  <p class="large"> STOP!  Applicants for non-hourly positions, please proceed to <a href="#section6">SECTION 6</a>.  Be sure to submit your Resume and Cover Letter.</p>
+  <p class="large">Hourly position applicants, continue here:</p>
+  
+      
+	  <br /><br />
+	  <span class="large">SECTION 2</span><br />
+<span class="bold">RECORD OF EDUCATION</span>
+<br /><br />
+<table border="1" cellpadding="5">
+  <tr>
+    <td>Name of Institution
+(beginning with high school)</td>
+    <td>Number of
+Years Attended</td>
+    <td>Did you graduate?
+(Yes or No)</td>
+    <td>Degree
+Minor/Major
+</td>
+  </tr>
+  <tr>
+    <td><input name="instname1" type="text" size="25" maxlength="100" /></td>
+    <td><input name="years1" type="text" size="25" maxlength="100" /></td>
+    <td><input name="graduate1" type="radio" value="yes" /> Yes <br />
+  <input name="graduate1" type="radio" value="no" /> No</td>
+    <td><input name="degree1" type="text" size="25" maxlength="100" /></td>
+  </tr>
+  <tr>
+    <td><input name="instname2" type="text" size="25" maxlength="100" /></td>
+    <td><input name="years2" type="text" size="25" maxlength="100" /></td>
+    <td><input name="graduate2" type="radio" value="yes" /> Yes<br /> 
+  <input name="graduate2" type="radio" value="no" /> No</td>
+    <td><input name="degree2" type="text" size="25" maxlength="100" /></td>
+  </tr>
+  <tr>
+    <td><input name="instname3" type="text" size="25" maxlength="100" /></td>
+    <td><input name="years3" type="text" size="25" maxlength="100" /></td>
+    <td><input name="graduate3" type="radio" value="yes" /> Yes <br />
+  <input name="graduate3" type="radio" value="no" /> No</td>
+    <td><input name="degree3" type="text" size="25" maxlength="100" /></td>
+  </tr>
+  
+</table>
+	  <br />
+        <br />
+		<span class="large">SECTION 3</span><br />
+        <span class="bold">SCHEDULE OF AVAILABILITY</span><br />
+        (please check off the boxes that represent times 
+        you <span class="bold"><i>are</i></span> available to work or choose &quot;All&quot; 
+        if your are available at all times listed)</p> <br />
+        <br />
+		<input name="all" type="checkbox" value="all" /> All
+      <table border="1" cellpadding="2">
+  <tr>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="scheduletue1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulewed1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulethu1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulefri1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulesat1" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulesun1" value="8-9" /> 8:00-9:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="scheduletue2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="schedulewed2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="schedulethu2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="schedulefri2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="schedulesat2" value="9-10" /> 9:00-10:00</td>
+    <td><input type="checkbox" name="schedulesun2" value="9-10" /> 9:00-10:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="scheduletue3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="schedulewed3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="schedulethu3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="schedulefri3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="schedulesat3" value="10-11" /> 10:00-11:00</td>
+    <td><input type="checkbox" name="schedulesun3" value="10-11" /> 10:00-11:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="scheduletue4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="schedulewed4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="schedulethu4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="schedulefri4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="schedulesat4" value="11-12" /> 11:00-12:00</td>
+    <td><input type="checkbox" name="schedulesun4" value="11-12" /> 11:00-12:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="scheduletue5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="schedulewed5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="schedulethu5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="schedulefri5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="schedulesat5" value="12-1" /> 12:00-1:00</td>
+    <td><input type="checkbox" name="schedulesun5" value="12-1" /> 12:00-1:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="scheduletue6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="schedulewed6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="schedulethu6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="schedulefri6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="schedulesat6" value="1-2" /> 1:00-2:00</td>
+    <td><input type="checkbox" name="schedulesun6" value="1-2" /> 1:00-2:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="scheduletue7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="schedulewed7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="schedulethu7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="schedulefri7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="schedulesat7" value="2-3" /> 2:00-3:00</td>
+    <td><input type="checkbox" name="schedulesun7" value="2-3" /> 2:00-3:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="scheduletue8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="schedulewed8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="schedulethu8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="schedulefri8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="schedulesat8" value="3-4" /> 3:00-4:00</td>
+    <td><input type="checkbox" name="schedulesun8" value="3-4" /> 3:00-4:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="scheduletue9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="schedulewed9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="schedulethu9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="schedulefri9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="schedulesat9" value="4-5" /> 4:00-5:00</td>
+    <td><input type="checkbox" name="schedulesun9" value="4-5" /> 4:00-5:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="scheduletue10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="schedulewed10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="schedulethu10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="schedulefri10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="schedulesat10" value="5-6" /> 5:00-6:00</td>
+    <td><input type="checkbox" name="schedulesun10" value="5-6" /> 5:00-6:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="scheduletue11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="schedulewed11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="schedulethu11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="schedulefri11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="schedulesat11" value="6-7" /> 6:00-7:00</td>
+    <td><input type="checkbox" name="schedulesun11" value="6-7" /> 6:00-7:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="scheduletue12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="schedulewed12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="schedulethu12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="schedulefri12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="schedulesat12" value="7-8" /> 7:00-8:00</td>
+    <td><input type="checkbox" name="schedulesun12" value="7-8" /> 7:00-8:00</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="schedulemon13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="scheduletue13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulewed13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulethu13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulefri13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulesat13" value="8-9" /> 8:00-9:00</td>
+    <td><input type="checkbox" name="schedulesun13" value="8-9" /> 8:00-9:00</td>
+  </tr>
+</table>
+	  <br /><br />
+	  Certain job positions require employees to be available beyond the times specified above.  
+	  If the position you applied for requires this, what times would you be available to work 
+	  prior to 8:00 am Monday-Sunday:
+	  <input name="morntimes" type="text" size="50" maxlength="150" />
+	  <br />
+	  After 9:00 pm Monday-Sunday: <input name="eventimes" type="text" size="50" maxlength="150" /> 
+	  <br /><br />
+	  <span class="large">SECTION 4</span>
+      <p><span class="bold">Work Experience:</span> Begin 
+      with your most recent job. List each job separately. 
+      Please include related volunteer work.</p> 
+	  <br /><br />
+      <table border="1" cellpadding="5">
+        <tr> 
+          <th>&nbsp;</th>
+          <th>DATES</th>
+          <th>EMPLOYERS</th>
+          <th>DUTIES</th>
+        </tr>
+        <tr> 
+          <th rowspan="6" valign="top">1.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm1" type="text" size="8"  /> 
+            <br />
+            To 
+            <input name="mthyrto1" type="text" size="8"  /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Current or Last Employer<br /> <input name="employer1" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title1" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties1" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address1" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours1" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city1" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary1" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super1" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone1" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave1" type="text" size="30" maxlength="150" /></td>
+        </tr>
+       <tr> 
+          <th rowspan="6" valign="top">2.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm2" type="text" size="8"  /> 
+            <br />
+            To 
+            <input name="mthyrto2" type="text" size="8"  /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Former Employer<br /> <input name="employer2" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title2" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties2" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address2" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours2" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city2" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary2" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super2" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone2" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave2" type="text" size="30" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <th rowspan="6" valign="top">3.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm3" type="text" size="8"  /> 
+            <br />
+            To 
+            <input name="mthyrto3" type="text" size="8"  /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Former Employer<br /> <input name="employer3" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title3" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties3" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address3" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours3" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city3" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary3" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super3" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone3" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave3" type="text" size="30" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <th rowspan="6" valign="top">4.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm4" type="text" size="8"  /> 
+            <br />
+            To 
+            <input name="mthyrto4" type="text" size="8"  /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Former Employer<br /> <input name="employer4" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title4" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties4" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address4" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours4" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city4" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary4" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super4" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone4" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave4" type="text" size="30" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <th rowspan="6" valign="top">5.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm5" type="text" size="8" /> 
+            <br />
+            To 
+            <input name="mthyrto5" type="text" size="8"  /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Former Employer<br /> <input name="employer5" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title5" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties5" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address5" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours5" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city5" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary5" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super5" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone5" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave5" type="text" size="30" maxlength="150" /></td>
+        </tr>
+       <tr> 
+          <th rowspan="6" valign="top">6.</th>
+          <td rowspan="3" class="small" valign="top">Month 
+            and Year:<br />
+            From 
+            <input name="mthyrfrm6" type="text" size="7" maxlength="7" /> 
+            <br />
+            To 
+            <input name="mthyrto6" type="text" size="7" maxlength="7" /></td>
+          <td rowspan="2" class="small" valign="top">Name 
+            of Former Employer<br /> <input name="employer6" type="text" size="40" maxlength="150" /></td>
+          <td class="small" valign="top">Your Title 
+            <input name="title6" type="text" size="30" maxlength="100" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="4" class="small" valign="top">Duties 
+            Performed<br /> <textarea name="duties6" cols="25" rows="7"></textarea></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Address<br /> 
+            <input name="address6" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td valign="top" class="small">Hours per week<br /> 
+            <input name="hours6" type="text" size="15" maxlength="50" /></td>
+          <td valign="top" class="small">City, State, 
+            Zip Code<br /> <input name="city6" type="text" size="40" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" valign="top" class="small">Salary 
+            <input name="salary6" type="text" size="15" maxlength="50" /></td>
+          <td class="small" valign="top">Immediate Supervisor 
+            <input name="super6" type="text" size="25" maxlength="150" /></td>
+        </tr>
+        <tr> 
+          <td class="small">Phone No. 
+            <input name="phone6" type="text" size="20" maxlength="30" /></td>
+          <td class="small" valign="top">Reason for 
+            Leaving 
+            <input name="leave6" type="text" size="30" maxlength="150" /></td>
+        </tr>
+      </table>
+	  <br /><br />
+   
+    <span class="large">SECTION 5 </span><br />
+	<br />
+    List your special qualifications, skills or accomplishments 
+    which you feel would apply to this specific position.<br />
+    <textarea name="qualifications" cols="75" rows="20"></textarea>
+    <br />
+	  
+    <br />
+	
+	<a name="section6"></a><span class="large">SECTION 6</span><br /><br />
+	MCPL conducts candidate background checks relevant to position responsibilities upon acceptance of an offer and as a contingency of employment. 
+    <br />
+    <br />
+    I, 
+    <input type="text" name="bgname" size="40" /> 
+    <span class="small">(please type your name)</span>, I certify that I have made true, 
+    correct and complete answers and statements on 
+    this application in the knowledge that they may 
+    be relied upon in considering my application. 
+    I understand that any omission, false answered 
+    statements made by me on this application, or 
+    any supplement to it will be sufficient cause 
+    for failure to employ or for my discharge should 
+    I become employed with the Monroe County Public 
+    Library.  
+	<br /><br />
+	<span class="large">SECTION 7</span>
+	<br /><br />
+	<span class="bold">Attachments:</span> <span class="small">Optional for hourly positions. Required for salaried positions.)</span>
+	<br /><br />
+	
+	Are you submitting a resume or other attachment?<br />
+	<input name="attachment" type="radio" value="yes" /> Yes <br />
+  <input name="attachment" type="radio" value="no" /> No
+	<br /><br />
+	<p>If Yes, please email you MS Word document to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#98;&#111;&#112;&#101;&#110;&#105;&#110;&#103;&#115;&#64;&#109;&#99;&#112;&#108;&#46;&#105;&#110;&#102;&#111;">&#106;&#111;&#98;&#111;&#112;&#101;&#110;&#105;&#110;&#103;&#115;&#64;&#109;&#99;&#112;&#108;&#46;&#105;&#110;&#102;&#111;</a></p>
+
+
+<div class="graydashborder">
+<p>Please complete the following Voluntary Equal Employment Opportunity Information Request form.</p>
+
+<p><span class="large">Voluntary Equal Employment Opportunity<br />
+Informational Survey Request</span><br />
+<span class="bold">The following information is for statistical purposes only.<br />
+It will be kept strictly confidential and will not be used for employment purposes.</span>
+</p>
+
+<p><span class="bold"> - TO BE COMPLETED BY APPLICANT FOR EMPLOYMENT -<br />
+FORM WILL BE FILED SEPARATELY FROM APPLICATION</span></p>
+
+<p>The Library is an equal opportunity employer and does not discriminate on the basis of race, color, religiion, sex, age, nation origin, disability, veteran status, sexual orientation, or any classification protected by federal, state, or local law.  This survey is for statistical purposes related <i>only</i> to our recording requirements for the Equal Employment Opportunity Commission and other governmental and legal record keeping obligations.</p>
+
+<p>All surveys will be kept in a confidential file <i>separate</i> from applications for employment. <span class="bold">Submission of this information is completely voluntary; it will not be used in considering your application.</span> Inclusion of exclusion of any date <i>will not affect</i> any employment decisions.  Thank you for your cooperation.</p>
+
+<hr />
+
+ZIP Code: 
+      <input name="eeozip" type="text" size="10" maxlength="10" />
+      <br />
+      <br />
+Position Title Applied For: <input name="eeopos" type="text" size="30" maxlength="50" />
+<br />
+<br />
+Sex:  <input name="eeosex" type="radio" value="Male" /> Male  
+  <input name="eeosex" type="radio" value="Female" /> Female
+  
+Date of Birth: <input name="eeobirth" type="text" size="10" maxlength="10" /> <span class="small"> (mm/dd/yyyy)</span>
+
+Age:&nbsp;<input name="eeoage" type="text" size="3" maxlength="3" />   
+<br /><br />
+
+Referral Source:<br />
+	<input name="eeoref" type="radio" value="MCPL website" /> MCPL Website
+	<input name="eeoref" type="radio" value="MCPL employee" /> MCPL employee  
+  <input name="eeoref" type="radio" value="Newspaper" /> Newspaper 
+  <input name="eeoref" type="radio" value="IU" /> IU 
+  <input name="eeoref" type="radio" value="IvyTech" />&nbsp;IvyTech<br /> 
+  <input name="eeoref" type="radio" value="WorkOne" /> WorkOne
+  <input name="eeoref" type="radio" value="Friend" /> Friend  
+  <input name="eeoref" type="radio" value="Other" /> Other
+  <input name="eeoother" type="text" size="30" maxlength="50" />
+  <br />
+  <br />
+  With which racial/ethnic group do you identify?<br />
+  <input name="eeoethnic" type="radio" value="White (non-Hispanic)" /> White (non-Hispanic)
+	<input name="eeoethnic" type="radio" value="Black (non-Hispanic)" /> Black (non-Hispanic)  
+  <input name="eeoethnic" type="radio" value="Hispanic" /> Hispanic <br />
+  <input name="eeoethnic" type="radio" value="Asian or Pacific Islander" /> Asian or Pacific Islander
+  <input name="eeoethnic" type="radio" value="American Indian or Alaska Native" /> American Indian or Alaska Native 
+  
+  
+  </div>
+  <br /><br />
+  
+	  
+    <p>
+	  <input name="submit" type="submit" value="Submit Application" />
+	  <input name="reset" type="reset" value="Reset" />
+    </p>
+  </form>
+
+ </div>
+
+
+
+</body>
+</html>

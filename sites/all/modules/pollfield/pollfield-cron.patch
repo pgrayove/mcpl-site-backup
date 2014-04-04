@@ -1,0 +1,13 @@
+Index: pollfield.module
+===================================================================
+--- pollfield.module	(revision 6748)
++++ pollfield.module	(working copy)
+@@ -1030,7 +1030,7 @@
+     // get where is table
+     // get table
+     $fields = content_fields();
+-    $db_info = content_database_info($fields[$field_name]);
++    $db_info = content_database_info($fields[$pollfield->field_name]);
+     $table_content = $db_info['table'];
+     $column = 'delta';
+     $is_delta_exist = db_column_exists($table_content, $column);

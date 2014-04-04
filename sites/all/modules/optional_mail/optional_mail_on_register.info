@@ -1,0 +1,12 @@
+name = Optional mail on register
+description = New users need not enter a valid email address when registering.
+core = 6.x
+
+package = User Management
+
+; Information added by drupal.org packaging script on 2012-01-04
+version = "6.x-1.1"
+core = "6.x"
+project = "optional_mail"
+datestamp = "1325700044"
+

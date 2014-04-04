@@ -1,0 +1,23 @@
+<?php
+// $Id: jscrollpane.module,v 1.1 2008/02/17 21:53:54 stevemckenzie Exp $
+
+/**
+ * 
+ *  @file
+ *  JavaScript based scrollable containers.
+ *  http://kelvinluck.com/assets/jquery/jScrollPane
+ * 
+ */
+
+/**
+ *  Add function.
+ */
+function jscrollpane_add() {
+  static $include;
+  
+  if (!$include) {
+    $path = base_path() . drupal_get_path('module', 'jscrollpane');
+    drupal_add_js($path .'/jscrollpane.js');
+    $include = TRUE;
+  }
+}

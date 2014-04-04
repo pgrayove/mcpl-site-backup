@@ -1,0 +1,21 @@
+--- aggregator.module.head	2005-02-11 23:14:38.000000000 -0800
++++ aggregator.module	2005-02-11 23:37:32.000000000 -0800
+@@ -73,6 +73,7 @@
+   $period = drupal_map_assoc(array(3600, 10800, 21600, 32400, 43200, 86400, 172800, 259200, 604800, 1209600, 2419200, 4838400, 9676800), 'format_interval');
+ 
+   $output = '';
++  $output .= form_textfield(t('Allowed HTML tags'), aggregator_allowed_html, variable_get('aggregator_allowed_html', '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'), 64, 255, 'Javascript event and style attributes are always stripped.');
+   $output .= form_select(t('Items shown in sources and categories pages'), 'aggregator_summary_items', variable_get('aggregator_summary_items', 3), $items, t('The number of items which will be shown with each feed or category in the feed and category summary pages.'));
+    $output .= form_select(t('Discard news items older than'), 'aggregator_clear', variable_get('aggregator_clear', 9676800), $period, t('Older news items will be automatically discarded.  Requires crontab.'));
+   $output .= form_radios(t('Category selection type'), 'aggregator_category_selector', variable_get('aggregator_category_selector', 'check'), array('check' => t('checkboxes'), 'select' => t('multiple selector')), t('The type of category selection widget which is shown on categorization pages. Checkboxes are easier to use; a multiple selector is good for working with large numbers of categories.'));
+@@ -482,9 +483,8 @@
+ 
+     // Prepare the item:
+     foreach ($item as $key => $value) {
+-      // TODO: Make handling of aggregated HTML more flexible/configurable.
+       $value = strtr(trim($value), $tt);
+-      $value = strip_tags($value, '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>');
++      $value = strip_tags($value, variable_get('aggregator_allowed_html', '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'));
+       $value = preg_replace('/\Wstyle\s*=[^>]+?>/i', '>', $value);
+       $value = preg_replace('/\Won[a-z]+\s*=[^>]+?>/i', '>', $value);
+       $item[$key] = $value;

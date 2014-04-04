@@ -1,0 +1,1278 @@
+html, body {	margin: 0;  
+	    	padding: 0; 
+		background-color: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	
+		font-size: 90%;  			
+		color: #000;	}
+
+#HEADER {	padding-left: 5px;
+		padding-right: 5px;
+		background-color: #FFE;  
+		color: #000;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	  
+      		margin-bottom: 0px;
+			}
+
+#HEADER2 {	padding-left: 5px;
+		padding-right: 5px;
+		background-color: #FFE;  
+		color: #000;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	  
+		}
+
+#HEADER3 {	padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		background-color: #6C6;  
+		color: #000;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	  
+		}
+
+#HEADER4 {	padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		background-color: #336633;  
+		color: #000;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	  
+		}
+
+
+#NAV {	width: 200px;	
+	float: left;
+	padding: 1px;
+   
+
+}
+
+.innernav
+	{ margin:10px;
+	padding-right: 5px;	
+}	
+
+#CONTENT {	padding: 10px;
+		background: transparent;
+	
+		}
+
+
+#CONTENTDEPT {	padding: 10px;
+		margin-left: 10px;
+		background: teal;
+		}
+
+
+	
+#FOOTER {	background: #FFE;  
+		color: #000;
+		border-top: 1px solid #336633;		
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	  
+		text-align: right;	
+		padding: 2px 10px 0 0;	
+		clear: both;	}
+
+#search {	padding: 5px 0;	
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	
+		text-align: left;	}
+
+
+.round-corners1
+ {
+	border: 2px solid #ff3333;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+
+}
+
+.round-corners2
+ {
+	border: 2px solid #009966;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+
+}
+
+.round-corners3
+ {
+	border: 2px solid #ff6633;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+}
+
+.round-corners4
+ {
+	border: 2px solid #0099ff;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+	
+}
+
+.round-corners5
+ {
+	border: 2px solid #336699;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+	
+}
+
+.round-corners6
+ {
+	border: 2px solid #993399;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+
+}
+
+.round-corners7
+ {
+	border: 2px solid #33cc66;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+
+}
+
+.round-corners8
+ {
+	border: 2px solid #ff0099;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px #888888;
+    font-size: 12px;
+    padding: 10px;
+	float: left;
+	width: 170px;
+	height: 155px;
+	margin: 10px;
+}
+
+
+.align-votes {
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+}
+
+.spacer {	clear: both;	}	
+.spacerleft { clear: left;}
+.spacerright{ clear: right;}
+
+
+.special
+	{ display: none;	
+}
+
+
+
+.leftcol {
+	float: left;
+	width: 250px;
+	padding: 10px;
+	}
+
+.left {
+  float: left;
+  text-align: left;
+  width: 59%;
+  }
+
+.leftimglist {
+	float: left;
+	padding-right: 15px;
+	margin-right: 35px;
+}
+
+.leftimg {
+	float: left;
+	padding-right: 20px;
+}
+
+
+.blkbordimg {
+border-top: 1px solid black; border-left: 1px solid black; border-right: 
+2px solid black; border-bottom: 2px solid black;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+ 
+* html #rightimg {
+  margin-left: 10px;
+  }
+ 
+* html p.home {
+  height: 1%;
+  margin-left: 0;
+  }
+  
+
+ 
+/* End hide from IE5/mac */
+
+
+.addthis {
+	padding: 0px;
+	}
+	
+	
+.rightimg {
+	float: right;
+	padding: 15px;
+	}
+	
+
+	
+	
+.righttext {
+	float: right;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	}	
+	
+.leftfloat {
+	float: left;
+	padding-right: 10px;
+	text-align: center;
+	width: 300px;
+	}
+
+
+.right {
+  float: right;
+  text-align: right;
+  width: 39%;
+  }
+
+.rightbox {
+	background-color: #FFF;   /*  #F5E095, #E9FBC9, #CF9, #DDCBA8, #DBEDF9, #DDCBA8 #9CF, #CC0, #FC3, #CF9, #FC9, #FF3, #CF6, #9CF, #FCF,  #CFF, #F69, #CFF, #9CC, #CC9, #FCC, #CF9, #FFC, #FF6, #F39, #CFF, #FF9, #CFC  */
+	/*background-image: url(images/polariscompass.gif);
+	background-repeat: no-repeat;*/
+	color: #000;
+	padding: 5px;
+	border-left: 2px solid #CCC; 
+border-top: 2px solid #CCC; 
+	border-bottom: 2px solid #999; 
+border-right: 2px solid #999; 
+	}
+
+	
+.halfborder {	padding-left: 15px;
+				
+				padding-top: 3px;
+				padding-bottom: 3px;  
+		border-bottom: 1px solid #336633; 
+	  border-left: 5px solid #336633;	
+	}
+
+.greenline { border-bottom: 1px solid #336633;
+	}
+	
+.ltgreenline { border-bottom: 1px solid #339933;
+	}	
+
+.greendashborder {padding: 15px;
+	border: 1px dashed #363;
+	}
+	
+.greenbrightborder {padding: 15px;
+	border: 5px solid #6C3;
+	}	
+.graydashborder {padding: 15px;
+	border: 1px dashed #999;
+	}
+	
+.orangedotborder { padding: 3px;
+	border: 4px dotted #FC0;
+	}
+.orangethickborder { padding: 3px;
+	border: 5px solid #F63;
+	}
+.orangethinborder { padding: 3px;
+	border: 1px solid #F63;
+	}
+
+.ltorangethinborder { padding: 5px;
+	border: 1px solid #FC0;
+	}
+
+.dkbluethinborder { padding: 3px;
+   border: 2px solid #339;
+   }
+
+.bluethinborder { padding: 4px;
+   border: 2px solid blue;
+   }
+
+.ltbluedashborder { padding: 3px;
+	border: 2px dashed #9CF;
+	}
+
+.bluedotborder { padding: 3px;
+	border: 4px dotted blue;
+	}
+
+.bluethickborder { padding: 3px;
+	border: 5px solid blue;
+	}	
+
+.blackthinborder { padding: 5px;
+	border: 2px solid black;
+	}	
+
+.redthinborder { padding: 5px;
+	border: 1px solid red;
+	}	
+
+
+.yellowthinborder { padding: 4px;
+   border: 2px solid #FC0;
+   }
+   
+   
+.padding {padding: 15px;
+			}
+			
+.padding-left { padding-left: 50px;
+			}
+						
+
+.boxed {padding: 5px;
+	background: #FFE;
+	color: #000;
+	
+	}
+
+.bold {	padding:0;
+       	margin-top: 0px;
+	background: transparent;
+  
+	font-weight: bold;      
+}
+
+.warning {	padding:0;
+       	margin-top: 0px;
+	background: transparent;
+       	color: Red;
+	font-weight: bold;
+       	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+}
+.warningmed { padding:0;
+	margin-top: 0px;
+	background: transparent;
+	color: Red;
+		font-weight: bold;
+		font-size: 100%;
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	}
+
+.warningsm {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		color: #FF0000;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}
+
+.orange { padding: 0;
+			background: transparent;
+			color: #FF9900;
+			font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+			}		
+		
+		
+.bluefriends { 
+			background: transparent;
+			color: #006699;
+			font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+
+		}	
+		
+.obobpurple { background: transparent;
+			color: #330066;
+			font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		}	
+		
+		
+.small {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}
+
+.medium {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: medium;}
+
+.med-large {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-weight: bold;
+		font-size: 120%;}
+
+.large {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: 150%;}
+		
+.largeextra	{	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: 250%;}	
+		
+.verylarge {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: 500%;}				
+		
+.invisible {
+	background: transparent;
+	color: #FFE; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+	text-decoration: none;
+	}
+.bgcolor {	padding: 1px;
+		margin-top: 0px;
+		background: #CC9;
+		color: #000; 
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		}
+
+.bgcolor2 {	padding: 5px;
+		margin-top: 0px;
+		background: #FC0;
+		color: #000; 
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		}
+		
+
+.bgcolorgreen { background: #C5DAA5;
+
+			}
+
+.bgcolorjobgreen { background: #d8efd6;
+}
+
+			
+.bgcolordkgray { background: #333333;
+	}					
+
+
+.bgcolorwhite { background: #FFF;
+	}	
+
+.teenbackground {background-color: #FFE;
+				 background-image: url(images/123.jpg); 
+				 background-repeat: no-repeat;
+				  background-position: right;
+				 background-attachment: fixed;}
+
+.mapborder {	border: 3px solid #336633; }
+
+.department {   padding: 3px;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-variant: small-caps;
+		font-weight: bold;
+		/* border-bottom: 1px solid #336633;
+		border-top: 1px solid #336633;
+		border-right: 1px solid #336633;
+		border-left: 5px solid #336633; */ 
+		color: #000;
+		font-size: 150%;
+	}
+
+
+p {	padding: 0;	
+	margin-top: 0px;	
+	background: transparent;
+	color: #000;
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	}
+
+
+dl.nav, dt.nav, dd.nav {  padding: 3px;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;		
+	  border-bottom: 1px solid #336633;
+	  border-left: 5px solid #336633;	
+
+	}
+
+td {  /* The two slashes is to make sure that the font is smaller in IE, but doesn't affect other browsers */
+		/*//font-size: smaller;*/  			
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;	
+
+	}
+
+a:link {
+	background: transparent;
+	color: #0066CC;
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+	text-decoration: none;
+	} 
+a:active {
+	background: transparent;
+	color: #0066CC; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+	text-decoration: none;
+	} 
+a:visited {
+	background: transparent;
+	color: #0066CC; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+	text-decoration: none;
+	} 
+
+a:hover {
+	background: transparent;
+	color: #339900; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+	text-decoration: underline;
+	} 
+
+a.invisible:link {
+	background: transparent;
+	color: #FFE; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-size: smaller; 
+	font-weight: bold; 
+	text-decoration: none;
+	}
+a.invisible:active {
+	background: transparent;
+	color: #FFE; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-size: smaller; 
+	font-weight: bold; 
+	text-decoration: none;
+	} 
+a.invisible:visited {
+	background: transparent;
+	color: #FFE; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-size: smaller; 
+	font-weight: bold; 
+	text-decoration: none;
+	} 
+
+a.invisible:hover {
+	background: transparent;
+	color: #FFE; 
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	font-size: smaller; 
+	font-weight: bold; 
+	text-decoration: underline;
+	}
+
+.ulhome { margin-left: none;
+	}
+	
+.nodec {	list-style: none;
+	font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; 
+	
+	}
+
+h1   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps;
+	margin: 2px;}
+
+h2   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps; 
+	}
+ 
+h3   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps; 
+	}
+
+
+h3.center   {background: transparent; text-align: center;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps;
+	}
+
+h4   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps; 
+	}
+
+h4.center   {background: transparent; text-align: center;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps;
+	}
+
+
+h5   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps;
+	}
+
+h6   {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif; font-variant: small-caps;
+	}
+
+pre {background: transparent; color: #000; font-size: 100%}
+
+address {background: transparent;
+	color: #000; font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;}
+
+
+/* Feedburner styles */
+	
+#ForTheLoveOfReading17olptp9iu1350mlajj07ethk4 	{ padding: 5px;
+	border-top: 1px dashed #363;
+	border-bottom: 1px dashed #363;
+	background: #FFF;
+	}
+	
+p.feedTitle  {padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}	
+		
+span.headline {padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}
+		
+p.date { padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}	
+		
+#ForTheLoveOfReading17olptp9iu1350mlajj07ethk4 li {	list-style: none;
+	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;
+	} 
+			
+p.fbsubscribelink {padding: 5px;
+        margin-top: 5 px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 70%;}			
+	
+#MCPLMoviesMusicBlogl2g6fimr24gofl72aucffeus8g { padding: 5px;
+	border-top: 1px dashed #363;
+	border-bottom: 1px dashed #363;
+	background: #DBD5B7;
+	}
+
+#ChildrensCanThinkq5i2nkjkvk52v46q3nb5slm3ok { padding: 5px;
+	border-top: 1px dashed #363;
+	border-bottom: 1px dashed #363;
+	background: #FFF;
+	}	
+	
+#MCPLMoviesMusicBlogl2g6fimr24gofl72aucffeus8g li {	list-style: none;
+	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;
+	} 
+	
+#ChildrensCanThinkq5i2nkjkvk52v46q3nb5slm3ok li  {	list-style: none;
+	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;
+	}  			
+	
+p.feedTitle  {padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}
+		
+span.headline {padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}
+		
+p.date {padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 80%;}	
+			
+p.fbsubscribelink {padding: 5px;
+		margin-top: 5 px;
+		background: transparent;
+		font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+		font-size: 70%;}		
+	
+/* Teens styles */	
+.teenmaroon {color: #900; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;} 	
+.teenblack  {color: #000; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teenblue   {color: blue; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teengreen  {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teengreenmed {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold; font-size: medium;}			  			  
+.teengreenlg  {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopgreenlg  {color: #363; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopgreenxlg  {color: #363; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: x-large;}
+.teentopred  {color: red; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentoporange {color: #C63; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopmagenta {color: #F09; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopblue {color: blue; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopblack  {color: #000; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentoppurple  {color: #C3F; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopredlg  {color: red; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentoporangelg {color: #C63; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopmagentalg {color: #F09; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopbluelg {color: blue; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopblacklg  {color: #000; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentoppurplelg  {color: #C3F; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teenwhite {color: white; font-family: Verdana, sans-serif;
+				background: transparent;}
+.teenyellow {color: #FFFF66; font-family: Verdana, sans-serif;
+				background: transparent;}							  			  			  			  			  			  			   			  			  			  				  			
+.border {border-left: 1px solid #336633;
+		padding: 10px;}
+
+
+/* *****************************************************************
+*
+*	The following CSS are used by the Community Informatoin Page
+*		Dan Bicknell October 2007
+*
+******************************************************************** */
+
+.squareDarkGreenList {
+
+	list-style: square; 
+	color: #285944;
+
+}
+
+.tinyText {
+
+	font-size: xx-small;
+
+}
+
+.tinyCenter {
+
+	font-size: xx-small; 
+	text-align: center;
+
+}
+
+.kindoflarge {    
+
+		padding: 0;
+                margin-top: 0px;
+                background: transparent;
+                font-size: xx-large;
+		color: #285944;
+
+}
+
+.inline {
+
+	display: inline;
+
+}
+
+.ninetyfive {
+
+	width: 95%;
+
+}
+
+
+.hidden_data {
+
+	width: 10%; 
+	padding: 5px; 
+	text-align: right; 
+	vertical-align: top;
+
+}
+
+/* *****************************************************************
+*
+*	end of Cof Code
+*
+******************************************************************** */
+
+
+
+
+@media print { html, body {	margin: 0;  
+	    	padding: 0; 
+		background-color: white;
+		font-family: Georgia, serif;	
+		font-size: 12pt;  			
+		color: #000;	}
+
+#HEADER {display: none;
+			}
+#HEADER2 {display: none;
+			}
+#HEADER4 {display: none;
+			}
+			
+#NAV {display: none;
+	}
+   
+.innernav
+	{ display: none;	
+}	
+
+#CONTENT {	/* padding: 10px;*/
+		border: none;
+		margin-left: 0px;		
+		background: white;
+	
+		font-size: 12pt;
+}
+/*
+#CONTENT a:link:after, #CONTENT a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 80%;
+   }
+
+#CONTENT a[href^="/"]:after {
+   content: " (http://www.monroe.lib.in.us" attr(href) ") ";
+   }
+		
+*/
+	
+#FOOTER {	background: #FFE;  
+		color: #000;
+		border-top: 1px solid #336633;		
+		font-family: Georgia, serif;	  
+		text-align: right;	
+		padding: 2px 10px 0 0;	
+		clear: both;	}
+
+
+
+.spacer {	clear: both;	}	
+.spacerleft { clear: left;}
+.spacerright{ clear: right;}
+
+.leftcol {
+	display: none;
+	}
+
+/*.left {
+  float: left;
+  text-align: left;
+  width: 59%;
+  }
+*/
+.leftimg {
+	float: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. 
+ 
+* html #leftimg {
+  margin-right: 10px;
+  }
+ 
+* html p.home {
+  height: 1%;
+  margin-left: 0;
+  }
+ 
+/* End hide from IE5/mac */
+
+	
+	
+.rightimg {
+	float: right;
+	padding-left: 5px;
+	
+	}
+
+/*.leftfloat {
+	float: left;
+	padding-right: 10px;
+	text-align: center;
+	width: 300px;
+	}
+*/
+
+/*.right {
+  float: right;
+  text-align: right;
+  width: 39%;
+  }*/
+
+.rightbox {
+	background: #CFF;  /* #F39, #CFF, #CF6, #9CF, #FF9, #CC9, #CCF, #CFC  */
+	color: #000;
+	padding: 5px;
+	/*	border-left: 2px solid #CCC; 
+border-top: 2px solid #CCC; 
+	border-bottom: 2px solid #999; 
+border-right: 2px solid #999; */
+	}
+
+.halfborder {	padding: 3px;  
+		border-bottom: 1px solid #336633; 
+	  border-left: 5px solid #336633;	
+	}
+
+.orangedotborder { padding: 3px;
+	border: 4px dotted #FC0;
+	}
+
+.bluedotborder { padding: 3px;
+	border: 4px dotted blue;
+	}
+	
+
+.boxed {display: none;
+	}
+
+.bold {	padding:0;
+       	margin-top: 0px;
+	background: transparent;
+  
+	font-weight: bold;      
+}
+
+.warning {	padding:0;
+       	margin-top: 0px;
+	background: transparent;
+       	color: Red;
+	font-weight: bold;
+       	font-family: Georgia, serif;
+}
+.warningmed { padding:0;
+	margin-top: 0px;
+	background: transparent;
+	color: Red;
+		font-weight: bold;
+		font-size: 12pt;
+	font-family: Georgia, serif;
+	}
+
+.small {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-family: Georgia, serif;
+		font-size: 10pt;}
+
+.medium {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: 12pt;}
+
+.large {	padding: 0;
+		margin-top: 0px;
+		background: transparent;
+		font-size: 16pt;}		
+		
+.invisible {
+	background: transparent;
+	color: #FFE; font-family: Georgia, serif;
+	font-weight: bold; 
+	text-decoration: none;
+	}
+.bgcolor {	padding: 1px;
+		margin-top: 0px;
+		background: #CC9;
+		color: #000; 
+		font-family: Georgia, serif;
+		}
+
+.teenbackground {background: #FFE url(images/123.jpg) no-repeat fixed}
+
+.mapborder {	border: 3px solid #336633; }
+
+
+
+p {	padding: 0;	
+	margin-top: 0px;	
+	background: transparent;
+	color: #000;
+	font-family: Georgia, serif;	}
+
+
+
+
+td {  
+		font-size: 12pt;  			
+		font-family: Georgia, serif;	
+
+	}
+
+a:link {
+	background: transparent;
+	color: #336633;
+	font-family: Georgia, serif; 
+	font-weight: bold;
+	font-size: 12pt; 
+	text-decoration: underline;
+	} 
+a:active {
+	background: transparent;
+	color: #336633; 
+	font-family: Georgia, serif;
+	font-weight: bold; 
+	text-decoration: none;
+	font-size: 12pt; 
+	} 
+a:visited {
+	background: transparent;
+	color: #339933; 
+	font-family: Georgia, serif;
+	font-weight: bold; 
+	text-decoration: underline;
+	font-size: 12pt; 
+	} 
+
+a:hover {
+	background: transparent;
+	color: #66CC66; 
+	font-family: Georgia, serif;
+	font-weight: bold; 
+	text-decoration: underline;
+	} 
+
+a.invisible:link { display: none;
+	}
+a.invisible:active {
+	display: none;
+	} 
+a.invisible:visited {
+	display: none;
+	} 
+
+a.invisible:hover {
+	display: none;
+	}
+
+
+	
+.nodec {	list-style: none;
+	font-family: Georgia, serif;
+	font-weight: bold; 
+	}
+
+h1   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+h2   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+ 
+h3   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+h3.center   {background: transparent; text-align: center;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+h4   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+h4.center   {background: transparent; text-align: center;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+
+h5   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+h6   {background: transparent;
+	color: #000; font-family: Georgia, serif; font-variant: small-caps;}
+
+pre {background: transparent; color: #000; font-size: 100%}
+
+address {background: transparent;
+	color: #000; font-family: Georgia, serif;}
+
+
+	
+/* Teens styles */	
+.teenmaroon {color: #900; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;} 	
+.teenblack  {color: #000; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teenblue   {color: blue; font-family: Comic Sans MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teengreen  {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold;}
+.teengreenmed {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold; font-size: medium;}			  			  
+.teengreenlg  {color: green; font-family: Trebuchet MS, sans-serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopgreenlg  {color: #363; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopgreenxlg  {color: #363; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: x-large;}
+.teentopred  {color: red; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentoporange {color: #C63; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopmagenta {color: #F09; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopblue {color: blue; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopblack  {color: #000; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentoppurple  {color: #C3F; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: medium;}
+.teentopredlg  {color: red; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentoporangelg {color: #C63; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopmagentalg {color: #F09; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopbluelg {color: blue; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentopblacklg  {color: #000; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}
+.teentoppurplelg  {color: #C3F; font-family: Courier New, serif;
+			  background: transparent; font-weight: bold; font-size: large;}			  			  			  			  			  			   			  			  			  				  			  
+ul.maroon {list-style: disc; color: #900; font-size: large;}			  
+ul.blue {list-style: disc; color: blue;}
+ul.orange {list-style: disc; color: #C63;}			    	
+
+
+.border {border-left: 1px solid #336633;
+		padding: 10px;}
+
+/* *****************************************************************
+*
+*	The following CSS are used by the Community Informatoin Page
+*		Dan Bicknell October 2007
+*
+******************************************************************** */
+
+.squareDarkGreenList {
+
+	list-style: square; 
+	color: #285944;
+
+}
+
+.tinyText {
+
+	font-size: xx-small;
+
+}
+
+.tinyCenter {
+
+	font-size: xx-small; 
+	text-align: center;
+
+}
+
+.kindoflarge {    
+
+		padding: 0;
+                margin-top: 0px;
+                background: transparent;
+                font-size: xx-large;
+		color: #285944;
+
+}
+
+.inline {
+
+	display: inline;
+
+}
+
+.ninetyfive {
+
+	width: 95%;
+
+}
+
+
+.hidden_data {
+
+	width: 10%; 
+	padding: 5px; 
+	text-align: right; 
+	vertical-align: top;
+
+}
+
+/* *****************************************************************
+*
+*	end of Cof Code
+*
+******************************************************************** */
+
+
+
+}
+
+
+
+
+
+

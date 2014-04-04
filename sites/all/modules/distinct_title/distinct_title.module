@@ -1,0 +1,14 @@
+<?php
+function distinct_title_views_pre_execute(&$view){
+  if ($view->name == 'parking')
+  {
+    $search = array('SELECT DISTINCT(node.nid)');
+    $replace = array('SELECT DISTINCT (node.title)');
+    $view->build_info['query'] = str_replace($search,
+                                             $replace,
+                                             $view->build_info['query']);
+    $view->build_info['count_query'] = str_replace($search,
+                                                   $replace,
+                                                   $view->build_info['count_query']);
+  }
+}

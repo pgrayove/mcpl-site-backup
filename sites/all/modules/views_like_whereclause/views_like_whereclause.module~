@@ -1,0 +1,18 @@
+<?php
+// $Id: views_like_whereclause.module
+
+/**
+* @file
+* Custom functions for this site.
+*/
+
+/**
+ * Implementation of hook_views_api().
+ */
+function views_like_where_views_api() { // your module name into hook_views_api
+  return array(
+    'api' => 2,
+    // might not need the line below, but in any case, the last arg is the name of your module
+    'path' => drupal_get_path('module', 'views_like_whereclause'),
+  );
+}

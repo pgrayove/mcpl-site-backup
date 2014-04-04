@@ -1,0 +1,136 @@
+<?php
+/*
+ * Clone Node Reference module allows for the clone module to be extended
+ * Includes an admin section for choosing what is cloned to what	 
+ * Created by the experts at Web Industries Ltd www.webindustries.co.nz
+*/
+
+
+function clone_noderef_clone_node_alter(&$node, $original_node, $op) {
+  if ($op == 'save-edit') {
+    $fields = variable_get('clone_noderef_fields', array());
+    foreach ($fields as $field_name) {
+      if ($field_name && isset($node->$field_name)) {
+        $node_field = &$node->$field_name;
+        foreach ($node_field[0]['items'] as $key => $nothing) {
+          $nid = clone_node_save($node_field[0]['items'][$key]['nid']);
+          $node_field[$key]['nid'] = $nid;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function clone_noderef_form_alter(&$form, $form_state, $form_id) {
+  if (isset($form['type']) && isset($form['#node']) && $form['type']['#value'] .'_node_form' == $form_id && arg(2) == 'clone') {
+    $form['prepopulated_clone'] = array(
+      '#type' => 'value',
+      '#value' => arg(1),
+    );
+  }
+  elseif ($form_id == 'clone_settings') {
+    $form['clone_noderef'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Nodereferrer fields to nodes that needs to be cloned'),
+    );
+    $values = variable_get('clone_noderef_fields', array());
+    foreach ($values as $key => $value) {
+      if (!$value) unset ($values[$key]); 
+    }
+    $form['clone_noderef']['clone_noderef_fields'] = array(
+      '#type' => 'checkboxes',
+      '#options' => clone_noderef_field_options(),
+      '#default_value' => $values,
+    );
+
+    $form['clone_convert'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Convert node types when cloning'),
+    );
+    $types = node_get_types('names');
+    foreach ($types as $type => $name) {
+      $form['clone_convert']['clone_convert_' . $type] = array(
+        '#type' => 'select',
+        '#title' => $name,
+        '#options' => $types,
+        '#default_value' => variable_get('clone_convert_' . $type, $type),
+      );
+    }
+
+    $form['clone_convert_field'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Convert nodereference fields when cloning'),
+    );
+    $fields = clone_noderef_field_options('nodereference');
+    foreach ($fields as $field => $label) {
+      $form['clone_convert_field']['clone_convert_field_' . $field] = array(
+        '#type' => 'select',
+        '#title' => $label,
+        '#options' => $fields,
+        '#default_value' => variable_get('clone_convert_field_' . $field, $field),
+      );
+    }
+
+    $form['buttons']['#weight'] = 100; 
+  }
+}
+
+/**
+ * Return an array of existing nodereference fields to be added to choose from
+ */
+function clone_noderef_field_options($type = 'nodereferrer') {
+  $fields = content_fields();
+  $options = array();
+  foreach ($fields as $field) {
+    if ($field['type'] == $type) {
+      $options[$field['field_name']] = $field['widget']['label'] . ' (' . $field['field_name'] . ')';
+    }
+  }
+  asort($options);
+
+  return $options;
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function clone_noderef_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  global $user;
+  
+  switch ($op) {
+    case 'presave':
+      if ($node->prepopulated_clone) {
+        $node->type = variable_get('clone_convert_' . $node->type, $node->type);
+// !!! For our own purposes
+//      $node->field_action_owner[0]['uid'] = $user->uid;
+      }
+      break;
+    case 'insert':
+      if ($node->prepopulated_clone && $original_node = node_load($node->prepopulated_clone)) { // if node has been cloned
+        $fields = variable_get('clone_noderef_fields', array());
+        foreach ($fields as $field_name) {
+          if ($field_name && isset($original_node->$field_name)) {
+            $node_field = $original_node->$field_name;
+            if ($node_field[0]['items']) {
+              foreach ($node_field[0]['items'] as $key => $nothing) {
+                $nid = clone_node_save($node_field[0]['items'][$key]['nid']);
+                $referrers = array_keys($node_field[0]['items'][$key]['referrers']);
+                $referrer = variable_get('clone_convert_field_' . $referrers[0], $referrers[0]);
+                $cloned_node = node_load($nid);
+                $cloned_node->type = variable_get('clone_convert_' . $cloned_node->type, $cloned_node->type);
+                $cloned_node->{$referrer}[0]['nid'] = $node->nid;
+// !!! keep referenced node in the same group(-s) as parent node
+//              $cloned_node->og_groups = $node->og_groups; 
+//              $cloned_node->field_action_owner[0]['uid'] = $user->uid;
+                node_save($cloned_node);
+              }
+            }
+          }
+        }
+      }
+      break;
+  }
+}

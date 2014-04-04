@@ -1,0 +1,11 @@
+; $Id: jscrollpane.info,v 1.1 2008/02/17 21:53:54 stevemckenzie Exp $
+description = "JavaScript based scrollable containers."
+name = "JScrollPane"
+core = 6.x
+
+; Information added by drupal.org packaging script on 2008-02-17
+version = "6.x-1.0"
+core = "6.x"
+project = "jscrollpane"
+datestamp = "1203285609"
+

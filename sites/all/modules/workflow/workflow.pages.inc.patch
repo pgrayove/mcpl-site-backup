@@ -1,0 +1,20 @@
+-- workflow.pages.inc.old	2011-07-06 04:15:32.000000000 +0700
++++ workflow.pages.inc	2011-07-06 04:18:51.000000000 +0700
+@@ -173,9 +173,16 @@ function workflow_tab_form_submit($form,
+   $node->workflow_scheduled_date = $form_state['values']['workflow_scheduled_date'];
+   $node->workflow_scheduled_hour = $form_state['values']['workflow_scheduled_hour'];
+ 
++  // node_save(), that uses node_submit(), resets revision author http://drupal.org/node/398110
++  // We must back it up then restore
++  $uid = db_result(db_query("SELECT uid FROM {node_revisions} WHERE vid = %d", $node->vid));
++
+   // Call node_save() to make sure any handlers that use the
+   // new workflow values will see them.
+   node_save($node);
+ 
++  // Restore revision author
++  db_query("UPDATE {node_revisions} SET uid = %d WHERE vid = %d", $uid, $node->vid);
++
+   $form_state['redirect'] = 'node/' . $node->nid;
+ }
+\ No newline at end of file

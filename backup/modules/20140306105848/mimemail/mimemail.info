@@ -1,0 +1,11 @@
+name = Mime Mail
+description = Allows to send HTML e-mail with embedded images and attachments.
+package = Mail
+core = 6.x
+
+; Information added by drupal.org packaging script on 2013-10-07
+version = "6.x-1.2"
+core = "6.x"
+project = "mimemail"
+datestamp = "1381151879"
+

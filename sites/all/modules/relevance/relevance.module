@@ -1,0 +1,305 @@
+<?php
+// $Id: relevance.module,v 1.16 2009/08/04 02:54:39 fernao Exp $
+
+
+/**
+ * Copyleft (C) 2008 by Cooperativa Laudelina Campos Melo.
+ * Author(s): Fernao Lopes
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY. See the LICENSE.txt file for more details.
+ *
+ **/
+
+// @file relevance.module
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function relevance_help($path, $arg) {
+  $output = '';
+  switch ($path) {
+    case "admin/help#relevance":
+      $output = '<p>'.  t("Displays links to nodes that has relevance with the current node. The site's admin may enable and defined the importance of vocabularies, periods of time and statistics.") .'</p>';
+      break;
+  }
+  return $output;
+} // function relevance_help
+
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the relevance module
+*/
+
+function relevance_perm() {
+  return array('administer relevance');
+} // function relevance_perm()
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function relevance_menu() {
+
+  $items = array();
+  
+  $items['admin/settings/relevance'] = array(
+    'title' => t('Relevance module settings'),
+    'description' => t('Configuration and adjusts of relevance module'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('relevance_settings_form'),
+    'access arguments' => array('administer relevance'),
+    'file' => 'relevance.admin.inc',
+   );
+
+  return $items;
+
+}
+
+/**
+* Generate HTML for the relevance block
+* @param op the operation from the URL
+* @param delta offset
+* @returns block HTML
+*/
+function relevance_block($op='list', $delta=0) {
+  // listing of blocks, such as on the admin/block page
+  if ($op == "list") {
+    $block[0]["info"] = t('Relevant content');
+    return $block;
+  } 
+  else if ($op == 'view') {    
+    $block['subject'] = t('Related content');
+    $block['content'] = _relevance_load();
+    return $block;
+  }    
+} // end relevance_block
+
+
+/**
+* Loads the relevant data based on actual nid
+* @returns content HTML
+*/
+function _relevance_load() {
+  // gets nid
+  if (is_numeric(arg(1))) {
+    $nid = arg(1);
+  }
+  else {
+    return;
+  }
+  
+  // sets basic vars (som
+  $settings_voc  = relevance_get_settings('voc');
+  $settings_date = relevance_get_settings('date');
+  $relevance     = "(count(*)"; // counts the occurrence of the same nid
+  $tables        = "{node} n";
+  $joins         = "n.nid <> %d ";
+  $args          = array($nid);
+
+  $display_timer = variable_get('relevance_display_timer', FALSE);
+  // timer
+  if ($display_timer) {
+    $start_time = microtime(0);
+  }
+  
+  // relevance by vocabularies
+  if (count($settings_voc) > 0) { 
+    $actual        = 0;
+    $parentesys    = 0;
+    $checked_enabled = FALSE;
+    foreach ($settings_voc as $vid => $voc) {
+      if ($voc['enabled'] && !$checked_enabled) {
+        $relevance      .= " * ";
+        $tables         .= " INNER JOIN {term_node} tn ON tn.nid = n.nid ";
+	$tables		.= " INNER JOIN {term_data} td ON td.tid = tn.tid ";
+	$tables		.= " INNER JOIN (SELECT tn.tid FROM {term_node} tn WHERE tn.nid = %d) as tids ON tids.tid = tn.tid ";
+        // TODO: put joins here ?
+        $joins          .= " ";
+	array_push($args, $nid);
+        $checked_enabled = TRUE;
+      }
+      
+      $last = count($settings_voc) -1;
+      // check for unfilled factors
+      $voc['factor'] = ($voc['factor'] == '' || $voc['factor'] == 0) ? '1' : $voc['factor'];
+
+      if ($voc['enabled'] == TRUE) {
+        $str_vocs   .= "$vid,";
+        if ($actual < $last) {
+          $relevance  .= "(IF(td.vid = $vid, " . $voc['factor'] . ", ";
+          $parentesys += 2;
+        }
+      }
+      if ($str_vocs != "" && $actual == $last) {
+        // last voc - it's time to close everything
+        $relevance .= $voc['factor'] .  str_repeat(")", $parentesys);
+      }
+      $actual ++;
+    }
+    $str_vocs = rtrim($str_vocs, ",");
+    if ($str_vocs != '') {
+      $joins .= "AND td.vid IN ($str_vocs)";
+    }
+  }
+  
+  // relevance by date 
+  if (count($settings_date) > 0) {
+    $actual          = 0;
+    $parentesys      = 0;
+    $checked_enabled = FALSE;
+    
+    foreach ($settings_date as $period => $date) {
+      if ($date['enabled'] && !$checked_enabled) {
+        $relevance      .= " * ";
+        $timestamp       = db_result(db_query("SELECT created FROM {node} WHERE nid = %d", $nid));
+        $checked_enabled = TRUE;
+      }
+      
+      $last = count($settings_date) -1;
+      // TODO: if enabled
+      if ($actual < $last) {
+        if ($date['enabled']) {
+          $from = $timestamp - $date['seconds'];
+          $to   = $timestamp + $date['seconds'];
+          $relevance .= "(IF(n.created BETWEEN $from AND $to, " . $date['factor'] . ", ";
+          $parentesys +=2;
+        }
+      }
+      else {
+        // if has at least one
+        if ($parentesys > 0) {
+          $relevance .= $date['factor'] . str_repeat(")", $parentesys);
+        }
+      }
+      $actual ++;
+    }
+  }
+  
+  // relevance by stats
+  // - check if the module is enabled
+  $stats_enabled = _is_module_enabled('statistics');
+  if ($stats_enabled) {
+    $stat_factor = variable_get('relevance_stat_factor', FALSE);
+    if ($stat_factor) {
+      $tables    .= ",{node_counter} nc";
+      $joins     .= " AND nc.nid = n.nid";
+      $relevance .= " + nc.totalcount / $stat_factor";
+    }
+  }
+
+
+  // close the query
+  $relevance .= ") AS relevance"; 
+  $limit = variable_get('relevance_display_itens', 5);
+  array_push($args, $limit);
+
+  // executes the query
+  $result = db_query("SELECT n.nid, n.title, " . $relevance . " FROM $tables WHERE " . $joins . " GROUP BY n.nid ORDER BY relevance DESC,n.nid DESC LIMIT %d", $args);
+  
+  // get data and create links
+  while ($links = db_fetch_object($result)) {
+    
+    // equalization
+    // - gets only the first (the higher one)
+    if (!isset($equalizer)) {
+      // TODO: user can define the scale
+      $scale = 10; 
+      $equalizer = $links->relevance / $scale;
+    }
+    $links->relevance = round($links->relevance / $equalizer, 2);
+    
+    // build the line
+    $content .= l($links->title, 'node/' . $links->nid);
+    if(variable_get('relevance_display_score', FALSE)){
+      $content .= " <span class='relevance-score'>" . $links->relevance . "</span>";
+    }
+    $content .= "<br/>";
+  }
+    
+  // check to see if there was any content 
+  if ($content == '') {
+    // no content related, return nothing.
+    return;
+  }
+  
+  if ($display_timer) {
+    $end_time = microtime(0);
+    $total_time = round($end_time - $start_time, 3);
+    $content .= "<p>" . t('Time elapsed:') . $total_time . "" . t('s') . "</p>";
+  }
+
+  return $content;
+}
+
+
+/**
+ * Get an array of settings or get their default values
+ *
+ * @param $op
+ *   String specifying the operation. Possible values are:
+ *     'voc'
+ *     'date'
+ *
+ * @return
+ *   Array of configuration
+ *
+ */
+function relevance_get_settings($op) {
+  
+  switch ($op) {
+    case 'voc':
+        // TODO: set a data structure for it - do it for an array of itens
+        $default = array();
+      return variable_get('relevance_voc', $default);
+    case 'date':
+      $default = array(
+        t('day') => array('enabled' => TRUE, 'name' => t('day'),  'factor' => 4, 'seconds' => 604800), 
+        t('week') => array('enabled' => TRUE, 'name' => t('week'), 'factor' => 2, 'seconds' => 1209600), 
+        t('month') => array('enabled' => TRUE, 'name' => t('month'), 'factor' => 1, 'seconds' => 2592000), 
+      );
+      return variable_get('relevance_date', $default);     
+    default:
+      return FALSE;
+  }
+}
+
+
+/**
+ * Implementation of hook_theme
+ */
+function relevance_theme() {
+  $theme = array(
+    'relevance_settings_form' => array(
+      'arguments' => array('form_element'),
+      'file' => 'relevance.admin.inc',
+    ),
+  );
+  return $theme;
+}
+
+
+/**
+ * Checks if a module is enabled or not
+ *
+ * @param $name
+ *   String specifying the name of the module to be tested
+ *     'voc'
+ *     'date'
+ *
+ * @return
+ *   Array of configuration
+ *
+ */
+function _is_module_enabled($name) {
+  if (is_string($name)) {
+    $stats_enabled = db_result(db_query("SELECT status FROM {system} where name = '%s'", $name));
+  }
+  return $stats_enabled;
+}

@@ -1,0 +1,11 @@
+name = Webform Term Options
+description = Adds pre-built option lists of Vocabularies to be used in webform components.
+package = Webform
+core = 6.x
+
+; Information added by drupal.org packaging script on 2011-06-07
+version = "6.x-1.0"
+core = "6.x"
+project = "webform_term_opts"
+datestamp = "1307452021"
+

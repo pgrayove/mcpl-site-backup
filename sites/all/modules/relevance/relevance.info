@@ -1,0 +1,11 @@
+; $Id: relevance.info,v 1.2 2009/02/12 18:05:47 fernao Exp $
+name = Relevance
+core = 6.x
+description = Display a block of related nodes similar by several - defined - things, such as taxonomy, date, and access.
+dependencies[] = taxonomy
+; Information added by drupal.org packaging script on 2009-08-04
+version = "6.x-2.2"
+core = "6.x"
+project = "relevance"
+datestamp = "1249355149"
+

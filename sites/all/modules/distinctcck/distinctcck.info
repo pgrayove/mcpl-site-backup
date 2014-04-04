@@ -1,0 +1,6 @@
+name = Distinct CCK in Views
+description = This provides the ability to use distinct in views for CCK fields.
+core = 6.x
+dependencies[] = views
+dependencies[] = content
+package = Views

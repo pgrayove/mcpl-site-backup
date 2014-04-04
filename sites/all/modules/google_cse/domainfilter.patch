@@ -1,0 +1,54 @@
+diff --git a/google.module b/google.module
+index 4ba3320..b263ef7 100644
+--- a/google.module
++++ b/google.module
+@@ -57,7 +57,7 @@ function google_form_alter(&$form, $form_state, $form_id) {
+  */
+ function google_submit_redirect($form, &$form_state) {
+   $keys = $form_state['values']['processed_keys'];
+-  $sitesearch = isset($form_state['values']['sitesearch']) ? $form_state['values']['sitesearch'] : NULL;
++  $sitesearch = isset($form_state['values']['as_sitesearch']) ? $form_state['values']['as_sitesearch'] : NULL;
+   $form_state['redirect'] = array('search/google/'. $keys, google_build_query($keys, $sitesearch));
+ }
+ 
+@@ -69,6 +69,6 @@ function google_build_query($keys, $sitesearch = NULL) {
+     'query' => $keys,
+     'cx' => variable_get('google_cse_cx', ''),
+     'cof' => variable_get('google_cse_cof_here', 'FORID:11'),
+-    'sitesearch' => isset($sitesearch) ? $sitesearch : google_cse_sitesearch_default(),
++    'as_sitesearch' => isset($sitesearch) ? $sitesearch : google_cse_sitesearch_default(),
+   ) + google_cse_advanced_settings();
+ }
+diff --git a/google_cse.module b/google_cse.module
+index d97f110..5ec8260 100644
+--- a/google_cse.module
++++ b/google_cse.module
+@@ -215,7 +215,7 @@ function google_cse_sitesearch_form(&$form) {
+         $options[$site[0]] = isset($site[1]) ? $site[1] : t('Search !sitesearch', array('!sitesearch' => $site[0]));
+       }
+     }
+-    $form['sitesearch'] = array(
++    $form['as_sitesearch'] = array(
+       '#type' => $type,
+       '#options' => array(
+         '' => ($var = variable_get('google_cse_sitesearch_option', '')) ? (($type == 'radios') ? check_plain($var) : $var) : t('Search the web'),
+@@ -232,5 +232,5 @@ function google_cse_sitesearch_form(&$form) {
+  * Return SiteSearch default value.
+  */
+ function google_cse_sitesearch_default() {
+-  return isset($_GET['sitesearch']) ? $_GET['sitesearch'] : (variable_get('google_cse_sitesearch_default', 0) ? array_shift(preg_split('/[\s]+/', variable_get('google_cse_sitesearch', ''))) : '');
++  return isset($_GET['as_sitesearch']) ? $_GET['as_sitesearch'] : (variable_get('google_cse_sitesearch_default', 0) ? array_shift(preg_split('/[\s]+/', variable_get('google_cse_sitesearch', ''))) : '');
+ }
+diff --git a/google_cse.theme.inc b/google_cse.theme.inc
+index 3d0c53e..c1b34f9 100644
+--- a/google_cse.theme.inc
++++ b/google_cse.theme.inc
+@@ -13,7 +13,7 @@ function template_preprocess_google_cse_results(&$variables) {
+     'q' => isset($_GET['query']) ? $_GET['query'] : '',
+     'cx' => variable_get('google_cse_cx', ''),
+     'cof' => variable_get('google_cse_cof_google', 'FORID:0'),
+-    'sitesearch' => google_cse_sitesearch_default(),
++    'as_sitesearch' => google_cse_sitesearch_default(),
+   ) + google_cse_advanced_settings();
+ 
+   $variables['results_searchbox_form'] = $variables['form'] ? drupal_get_form('google_cse_results_searchbox_form', $variables['self']) : '';

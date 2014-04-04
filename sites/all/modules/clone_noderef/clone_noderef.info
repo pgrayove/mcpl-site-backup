@@ -1,0 +1,7 @@
+; $Id:$
+name = Clone nodereference module
+description = "Cloning nodes will clone also referenced nodes."
+dependencies[] = clone
+dependencies[] = nodereference
+dependencies[] = nodereferrer
+core = 6.x

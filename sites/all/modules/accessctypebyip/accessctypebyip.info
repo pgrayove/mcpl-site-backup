@@ -1,0 +1,12 @@
+; $Id: accessctypebyip.info,v 1.1.2.2 2010/11/16 21:36:38 desecho Exp $
+name = Access Content Type by IP
+description = Controls access to content types by IP addresses and hostnames.
+package = Access control
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-11-16
+version = "6.x-1.2"
+core = "6.x"
+project = "accessctypebyip"
+datestamp = "1289943971"
+

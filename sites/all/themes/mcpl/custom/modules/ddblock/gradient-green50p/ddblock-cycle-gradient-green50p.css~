@@ -1,0 +1,296 @@
+/*!
+ * Dynamic display block module template:gradient-green50p - Cascading Style Sheet 
+ * Copyright(c) 2008 - 2009 P. Blaauw All rights reserved. 
+ * Version 1.0(05-DEC-2009) 
+ */ 
+ 
+/* ENTIRE BLOCK BACKGROUND */
+div.ddblock-cycle-gradient-green50p div.container{
+	background-color: transparent;
+	padding-bottom: 6px;
+}
+div.ddblock-cycle-gradient-green50p div.container-inner{height:404px;position:relative;}
+div.ddblock-cycle-gradient-green50p div.slider{
+	float:left;
+	margin-bottom: 12px;
+}
+div.ddblock-cycle-gradient-green50p div.slider-inner{height:303px;overflow:hidden;position:relative;visibility:hidden;}
+div.ddblock-cycle-gradient-green50p div.slide{display:none;height:100%;left:0;position:absolute;top:0;}
+
+/*IMAGE BLOCK */
+div.ddblock-cycle-gradient-green50p div.slide-inner img{ 
+	height:303px;
+	margin:0!important;
+	padding:0!important; 
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+/* SEE-THROUGH TEXT BACKGROUND ON IMAGE */
+div.ddblock-cycle-gradient-green50p div.slide-text{
+	background-image: url('../images/transparent_bg.png');
+	position:absolute;
+	color: #FFF;
+	overflow: hidden;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-text-horizontal{
+	height:85px;
+	left:0;
+	top:188px;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-text-vertical{height:303px;width:140px;}
+div.ddblock-cycle-gradient-green50p div.slide-text-top{top:7px;}
+div.ddblock-cycle-gradient-green50p div.slide-text-right{bottom:0;right:30px;}
+div.ddblock-cycle-gradient-green50p div.slide-text-bottom{bottom:7px;}
+div.ddblock-cycle-gradient-green50p div.slide-text-left{bottom:0;left:30px;}
+
+div.ddblock-cycle-gradient-green50p div.slide-text-inner{
+	padding:10px;
+	
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-title{
+	float:left;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-title-vertical{width:130px;}
+
+div.ddblock-cycle-gradient-green50p div.slide-title-horizontal{
+	float:none;
+	width:100%;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-title h2{
+	margin:-5px 0 0 0;
+	padding:0;
+	font-size: 20px;
+	opacity: 1;
+	width:100%;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-title-inner{color:white;font-weight:bold;}
+div.ddblock-cycle-gradient-green50p div.slide-body-vertical{width:132px;}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-horizontal{
+	float:left;
+	width:290px;
+	padding: 4px 0 0 0;
+	display: none;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-inner{
+	color:white;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-inner p{
+	margin:0 8px 0 0;
+	padding:0 0 0 0;
+	font-size: 14px;
+	opacity: 1;
+	width:100%;
+}
+
+/* READ MORE BUTTON */
+div.ddblock-cycle-gradient-green50p div.slide-read-more{
+	width:110px;
+	padding: 0 2em 0 0;
+	opacity: 1;
+}
+div.ddblock-cycle-gradient-green50p div.slide-read-more p{
+	padding:0!important;
+	margin:0!important;
+	opacity: 1;
+}
+div.ddblock-cycle-gradient-green50p div.slide-read-more a{
+	border:none;
+	bottom:5px;
+	color:#000;
+	font-weight: bolder;
+	font-size:12px;
+	font-family:Verdana, sans-serif;
+	margin:0;
+	padding:4px 0 4px 19px;
+	position:absolute;
+	text-decoration:none;
+	text-align:left;
+	width:100px;
+	background-color: #99CC33;
+	border: 1px solid #000;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	opacity: 1;
+}
+div.ddblock-cycle-gradient-green50p div.slide-read-more a:hover{
+	background-color: #339900;
+	text-decoration: none;
+	color: #000;
+	opacity: 1;
+	text-shadow: none;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-read-more-horizontal a{right:-17px;}
+div.ddblock-cycle-gradient-green50p div.slide-read-more-vertical a{right:5px;}
+div.ddblock-cycle-gradient-green50p div.slide-read-more a:hover{text-decoration:underline;}
+div.ddblock-cycle-gradient-green50p div.slide-read-more-horizontal a:hover{right:-17px;}
+div.ddblock-cycle-gradient-green50p div.slide-read-more-vertical a:hover{right:5px;}
+div.ddblock-cycle-gradient-green50p div.custom-pager{width:478px;}
+div.ddblock-cycle-gradient-green50p div.custom-pager-inner{	
+	height:95px;
+	margin-left:3px;
+}
+div.ddblock-cycle-gradient-green50p div.custom-pager .custom-pager-item{float:left;}
+
+/* PAGER BUTTONS */
+div.ddblock-cycle-gradient-green50p div.custom-pager .custom-pager-item-inner{
+	border-style: solid;
+	border-color: #FFF;
+	border-width: 3px;
+	background-color: transparent;
+	font-weight: bolder;
+	text-align: center;
+	margin: 0;
+}
+
+div.spacer-horizontal, .spacer-vertical{
+	display:none;
+}
+
+/*PAGER TEXT */
+div.ddblock-cycle-gradient-green50p div.custom-pager a{
+	background-color: #99CC33;
+	border:1px solid #000;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	display:block;
+	font-size: 12px;
+	font-family:verdana,arial,sans-serif;
+	text-decoration:none;
+	color:#000;
+	/* padding: 12px; */
+	box-shadow: 1px 1px 6px #333;
+}
+
+div.ddblock-cycle-gradient-green50p div.custom-pager a:hover,
+div.ddblock-cycle-gradient-green50p div.custom-pager a.activeSlide{
+	opacity:1;
+	background-color: #339900;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+/*
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.45, #8FD776),
+	    color-stop(0.6, #54B848));
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    #8FD776 45%,
+	    #54B848 60%);
+*/
+/*	text-shadow: -1px -1px 1px #81BA68; */
+	
+}
+div.ddblock-cycle-gradient-green50p div.custom-pager a:hover{opacity:1;}
+div.ddblock-cycle-gradient-green50p div.custom-pager a:focus{outline:none;}
+
+/* THUMBNAIL IMAGE WITHIN THE PAGER */
+div.ddblock-cycle-gradient-green50p div.custom-pager img{
+	border:none;
+	height:28px;margin:0!important;
+	padding:8px 4px!important;
+	vertical-align:middle;
+	width:40px;
+	display: none;
+}
+div.ddblock-cycle-gradient-green50p div.spacer-vertical{float:left;height:1px;width:3px;}
+div.ddblock-cycle-gradient-green50p div.spacer-horizontal{clear:both;height:5px;}
+
+
+/**************************/
+/*** RESIZING THE BLOCK ***/
+/**************************/
+
+div.ddblock-cycle-gradient-green50p div.container{ 
+	width:730px; /* WIDTH OF THE MAIN CONTAINER */
+}
+
+div.ddblock-cycle-gradient-green50p div.container-inner{
+	height:386px; /* HEIGHT OF THE MAIN CONTAINER */
+}
+
+div.ddblock-cycle-gradient-green50p div.slider{
+	width:730px; /* WIDTH OF SLIDE TEXTBOX CONTAINER */
+}
+
+div.ddblock-cycle-gradient-green50p div.slider-inner{
+	height:303px; /* HEIGHT OF SLIDE TEXTBOX CONTAINER */
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-inner img{ 
+	height:303px; /* HEIGHT & */
+	width:708px; /* WIDTH OF MAIN IMAGE */
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-text-horizontal{
+	height:92px; /* HEIGHT & */
+	width:708px; /* WIDTH OF TRANSLUCENT TEXTBOX WHEN HORIZONTAL */
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-text-vertical{
+	height:303px; /* HEIGHT & */
+	width:140px; /* WIDTH OF TRANSLUCENT TEXTBOX WHEN VERTICAL */
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-title-vertical{
+	width:130px;
+}
+div.ddblock-cycle-gradient-green50p div.slide-title-horizontal{
+	width:100%;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-vertical{
+	width:132px;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-horizontal{
+	width:684px;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-read-more a{
+	width:112px; /* WIDTH OF READ MORE... LINK (MOVES TO THE LEFT) */
+}
+
+div.ddblock-cycle-gradient-green50p div.custom-pager{
+	width:708px;
+}
+
+div.ddblock-cycle-gradient-green50p div.custom-pager-inner{
+	height:95px;
+}
+
+div.ddblock-cycle-gradient-green50p div.custom-pager .custom-pager-item-inner{
+	width:82px;
+}
+
+div.ddblock-cycle-gradient-green50p div.custom-pager img{
+	width:40px; /* WIDTH OF THUMBNAIL IMAGE */
+}
+
+/*Remove the following lines to bring back the semi-transparent title and teaser text: */
+
+div.ddblock-cycle-gradient-green50p div.slide-text{
+	background-image: none;
+}
+
+div.ddblock-cycle-gradient-green50p div.slide-body-horizontal,
+div.ddblock-cycle-gradient-green50p div.slide-title{
+	display: none;
+}
+

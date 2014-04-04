@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*body{ background-color:#FFFFEE};*/
+
+#mcs5_container{position:relative; left:20px; top:0px; margin:0; width:800px; height:400px; padding:0 10px; border: 1px solid #777777; box-shadow: 1px 1px 2px #888888; -moz-border-radius:12px; -khtml-border-radius:12px; -webkit-border-radius:12px; border-radius:12px; background-color: #FFFFFF;}
+#mcs5_container .customScrollBox{position:relative; width:800px; overflow-x:hidden;}
+#mcs5_container .customScrollBox .horWrapper{position:relative; left:0;}
+#mcs5_container .customScrollBox .container{position:relative; left:0; display:inline-block; *display:inline;}
+#mcs5_container .customScrollBox .content{clear:both; height:370px; overflow-y:auto;} /*background-image:url(monthLine.gif); background-repeat:repeat-x;*/
+#mcs5_container .dragger_container{position:relative; height:0px; width:780px; margin:10px; top:10px;} /*border-top:1px dashed #51B949;*/
+#mcs5_container .dragger{position:absolute; width:91px; height:34px; background: url(scrollButton.png) no-repeat; margin-top:-26px;}
+#mcs5_container .dragger_pressed{position:absolute; width:91px; height:34px; background: url(scrollButton.png) no-repeat; margin-top:-26px;}
+#mcs5_container .scrollUpBtn,#mcs5_container .scrollDownBtn{position:absolute; bottom:-40; display:inline-block; font-family:Arial,Helvetica,sans-serif; font-size:large; font-weight:normal; color:#339900; margin:8px 5px 0 10px; text-decoration:none;}
+#mcs5_container .scrollDownBtn{right:10px;}
+#mcs5_container .scrollUpBtn{right:50px;}
+#mcs5_container .scrollUpBtn:hover,#mcs5_container .scrollDownBtn:hover{color:#339900;}

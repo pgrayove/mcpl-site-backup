@@ -1,0 +1,9 @@
+--- a/google_cse_results.tpl.php	2011-11-10 19:22:25.000000000 -0500
++++ b/google_cse_results.tpl.php	2011-11-10 19:10:08.000000000 -0500
+@@ -22,5 +22,6 @@
+     var googleSearchFrameborder = 0;
+     var googleSearchDomain = Drupal.settings.googleCSE.domain;
+     var googleSearchPath = '/cse';
++    var googleSearchQueryString = 'query';
+   //]]>
+ </script>

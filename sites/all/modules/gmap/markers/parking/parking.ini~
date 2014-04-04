@@ -1,0 +1,44 @@
+; Defaults
+[defaults]
+shadow = "shadow.png"
+anchorX = 7
+anchorY = 19
+infoX = 10
+infoY = 2
+
+; Marker sets
+
+; Bevan's markers
+
+; Orange
+
+[small orange]
+name = "Parking Orange"
+sequence = "orange.png"
+
+; Green
+
+[small green]
+name = "Parking Green"
+sequence = "green.png"
+
+
+; Violet
+
+[small purple]
+name = "Parking Purple"
+sequence = "purple.png"
+
+; Brown
+
+[small brown]
+name = "Parking Brown"
+sequence = "brown.png"
+
+; Grayscale
+
+[small gray]
+name = "Parking Gray"
+sequence = "gray.png"
+
+; Files

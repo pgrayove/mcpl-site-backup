@@ -1,0 +1,12 @@
+
+name = Smart tabs
+description = Give your tabs a memory, so that on subsequent visits to a page the previously visited tab is again pre-selected for you.
+core = "6.x"
+package = Menus
+
+; Information added by drupal.org packaging script on 2013-04-11
+version = "6.x-1.8"
+core = "6.x"
+project = "smart_menus"
+datestamp = "1365642935"
+

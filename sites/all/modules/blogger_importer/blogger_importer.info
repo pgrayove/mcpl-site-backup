@@ -1,0 +1,17 @@
+; $Id$
+
+name = Blogger Importer
+description = "Imports blog posts from Blogger export XML"
+
+core = 6.x
+
+package = Blogger
+
+dependencies[] = querypath
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "6.x-1.0-alpha1"
+core = "6.x"
+project = "blogger_importer"
+datestamp = "1298662566"
+

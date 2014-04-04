@@ -1,0 +1,12 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore really large files
+#ftp/SRP/*.zip
+
+# Ignore log files
+sites/all/modules/print/lib/dompdf/lib/fonts/log.htm

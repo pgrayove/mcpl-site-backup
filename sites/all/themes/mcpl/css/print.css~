@@ -1,0 +1,72 @@
+/* Documentation for the type-pfbooklists styles.  This is set in the staff-picks view.  Look Under the Title and Body fields for type-[type].  The type variable is for the node type.  I set the pfbooklists type in the view under the Printer Friendly Page display.  It is set in the fields for node title and a few others.  The printer friendly display is also where I set the path pf/staff-picks... */
+
+
+body {
+  margin: 1em;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+th {
+  text-align: left; /* LTR */
+  color: #006;
+  border-bottom: 1px solid #ccc;
+}
+tr.odd {
+  background-color: #ddd;
+}
+tr.even {
+  background-color: #fff;
+}
+td {
+  padding: 5px;
+}
+#menu {
+  visibility: hidden;
+}
+#main {
+  margin: 1em;
+}
+
+
+a:link.type-pfbooklists {color: #000; font-weight: bold; font-size: small;}
+a:visited.type-pfbooklists {color: #000; font-weight: bold; font-size: small;}
+a:hover.type-pfbooklists {color: #00f; font-weight: bold; font-size: small;}
+a:link {color: #000;}
+a:visited {color: #000;}
+a:hover {color: #00f;}
+a:link img, a:visited img {border: 0;}
+.print-footnote {font-size: xx-small;}
+img.print-logo {border: 0;}
+.print-site_name {font-size: small;}
+.print-breadcrumb {font-size: x-small;}
+.print-title {}
+.print-submitted {font-size: small;}
+.print-created {font-size: small;}
+.print-taxonomy {
+  text-align: right;
+}
+
+span.type-pfbooklists {font-size:small;}
+
+.print-taxonomy li {display: inline;}
+.print-content {}
+.print-hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  margin: 1px;
+  color: #9E9E9E;
+  background-color: #9E9E9E;
+}
+p {margin-top: 0px; margin-bottom: 5px;}
+
+.print-message {
+  border: medium dotted blue;
+  padding: 1em;
+}
+.print-source_url {font-size: small;}
+.print-links {font-size: small;}
+.print-footer {text-align: center; font-size: small;}
+
+
+h1.pf-title {font-size: large;}

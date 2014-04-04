@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the User Alert module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+ 
+function user_alert_schema() {
+	$schema['user_alert'] = array(
+    'description' => 'Action Alert table.',
+    'fields' => array(
+	  'aid' => array(
+        'description' => 'The serial ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+	  ),
+      'nid' => array(
+        'description' => 'The primary identifier of the node.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+	  ),
+      'uuid' => array(
+        'description' => 'The UUID of the visitor.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+      ),
+	  ),
+    'primary key' => array('aid'),
+  );
+
+return $schema;
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function user_alert_install() {
+   drupal_install_schema('user_alert');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function user_alert_uninstall() {
+	variable_del('user_alert_label');
+	variable_del('user_alert_timelimit');
+	
+	drupal_uninstall_schema('user_alert');
+}

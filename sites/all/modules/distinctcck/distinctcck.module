@@ -1,0 +1,14 @@
+<?php
+function distinctcck_views_pre_execute(&$view){
+  if ($view->name == 'all_staff_picks')
+  {
+    $search = array('SELECT DISTINCT(node.nid)');
+    $replace = array('SELECT DISTINCT (node_data_field_list_assignment.field_list_assignment_value)');
+    $view->build_info['query'] = str_replace($search,
+                                             $replace,
+                                             $view->build_info['query']);
+    $view->build_info['count_query'] = str_replace($search,
+                                                   $replace,
+                                                   $view->build_info['count_query']);
+  }
+}

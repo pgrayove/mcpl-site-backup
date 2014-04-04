@@ -1,0 +1,194 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MCPL Timeline</title>
+
+<link type="text/css" rel="stylesheet" href="scrollCSS2.css">
+<link href="CustomScrollbar2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.min.js"></script>
+<script src="jquery-collision-1.0.1.js"></script>
+<script type="text/javascript" src="scratch1.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $("#content-slider").slider({
+    animate: true,
+    change: handleSliderChange,
+    slide: handleSliderSlide
+  });
+});
+
+function  handleSliderChange(e, ui)
+{
+  var maxScroll = $("#content-scroll").attr("scrollWidth") -
+                  $("#content-scroll").width();
+  $("#content-scroll").animate({scrollLeft: ui.value *
+     (maxScroll / 100) }, 1000);
+}
+
+function handleSliderSlide(e, ui)
+{
+  var maxScroll = $("#content-scroll").attr("scrollWidth") -
+                  $("#content-scroll").width();
+  $("#content-scroll").attr({scrollLeft: ui.value * (maxScroll / 100) });
+}
+var cat;
+var term;
+var firstYear;
+var endYear;
+var monthArray = new Array("January","January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+</script>
+
+
+</head>
+
+<body >
+<div class="searchDiv">
+<form id="searchForm" method="get" action="" name="searchForm">Filter By: 
+<input type="text" value="" maxlength="100" size="26" name="term">
+<input type="hidden" value="searchAll" name="cat">
+<input type="hidden" value="1900" name="startYear">
+<input type="hidden" value="2012" name="endYear">
+<input type="button" onClick="resolveDisplay(this.form)" alt="Apply" id="Apply" value="Apply" name="Filter">
+</form>
+<button id="toggle">Show Advanced Search</button>
+</div>
+<div class="searchDiv" style="display: none;">
+<form id="searchForm" method="get" action="" name="searchForm">Filter By:<br />
+Selected Catagory  
+<select name="cat">
+<option value="searchAll">All</option>
+<option value="Brief_Description">Title</option>
+<option value="Event">Full Description</option>
+<option value="Controlled_Vocabulary">Subject</option>
+<option value="Tags">Tags</option>
+<option value="Indexer">Indexer</option>
+<option value="Source_Full_Citation">Source</option>
+</select> : <input type="text" value="" maxlength="100" size="26" name="term">
+<!--top 20 selection for possible future use
+<br />or</br />
+<select name="topList">
+<option value="top1">Top catagories will go here</option>
+</select>-->
+<p>Limit search start and end dates (optional):<br />
+Between <input type="text" value="1900" name="startYear" maxlength="4" size="4"> and 
+<input type="text" value="2012" name="endYear" maxlength="4" size="4">
+<p>
+<input type="button" onClick="resolveDisplay(this.form)" alt="Apply" id="Apply" value="Apply" name="Filter">
+</form>
+<p>
+<button id="toggle">Hide Advanced Search</button>
+</div>
+<div class="printText"><a href="#" onClick="printF()">printer friendly version</a></div>
+<p>
+
+<script>
+$("button").click(function () {
+$("div.searchDiv").toggle("slow");
+});    
+</script>
+<script type="text/javascript">
+<!--
+function toTop(id){
+document.getElementById(id).scrollTop=0
+}
+
+defaultStep=2
+step=defaultStep
+function scrollDivDown(id){
+document.getElementById(id).scrollTop+=step
+timerDown=setTimeout("scrollDivDown('"+id+"')",10)
+}
+
+function scrollDivUp(id){
+document.getElementById(id).scrollTop-=step
+timerUp=setTimeout("scrollDivUp('"+id+"')",10)
+}
+
+function toBottom(id){
+document.getElementById(id).scrollTop=document.getElementById(id).scrollHeight
+}
+
+// -->
+</script> 
+<div id="vertScrl" style="display:inline-block; width:16px; heght:400px; float:right; padding-top:50px;"><a href="#null" onClick="toTop('content')" style="text-decoration:none;"><img width="15px" height="15px" style="text-decoration:none;" src="divallup.png"></a> 
+<a href="#null" onMouseDown="scrollDivUp('content')" onMouseUp="clearTimeout(timerUp)" style="text-decoration:none;"><img width="15px" height="120px" style="text-decoration:none;" src="updiv.png"></a> 
+<a href="#null" onMouseDown="scrollDivDown('content')" onMouseUp="clearTimeout(timerDown)" style="text-decoration:none;"><img width="15px" height="120px" style="text-decoration:none;" src="downdiv.png"></a>
+<a href="#null" onClick="toBottom('content')" style="text-decoration:none;"><img width="15px" height="15px" style="text-decoration:none;" src="divalldown.png"></a> </div>
+
+<div id="mcs5_container">
+	<div class="customScrollBox">
+    	<div class="horWrapper" style="width:80000px;">
+        	<div class="container">
+            	<div style="width: 80000px; height:360px;" class="content" id="content"></div>
+			        <div id="dateBanner" style="width: 100%; height: 20px; position: relative; float:right; bottom: 2px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="dragger_container" style="display: block;">
+            <div class="dragger ui-draggable" style="display: block;"></div>
+            </div>
+    <a class="scrollUpBtn" href="#" style="display: inline-block;">⇦</a> <a class="scrollDownBtn" href="#" style="display: inline-block;">⇨</a>
+</div>
+
+
+<script type="text/javascript">
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","Entry.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+
+//alert(document.searchForm.form);
+
+resolveDisplaySet("Brief_Description", "", "1900", "2012");
+//document.searchForm.submit();
+
+</script>
+
+<!-- content to show if javascript is disabled -->
+<noscript>
+	<style type="text/css">
+		#mcs5_container .customScrollBox{overflow:auto;}
+		#mcs5_container .dragger_container{display:none;}
+	</style>
+</noscript>
+
+<script>
+$(window).load(function() {
+	mCustomScrollbars();
+});
+
+function mCustomScrollbars(){
+	$("#mcs5_container").mCustomScrollbar("horizontal",400,"easeOutCirc",1,"fixed","yes","yes",10); 
+}
+
+/* function to fix the -10000 pixel limit of jquery.animate */
+$.fx.prototype.cur = function(){
+    if ( this.elem[this.prop] != null && (!this.elem.style || this.elem.style[this.prop] == null) ) {
+      return this.elem[ this.prop ];
+    }
+    var r = parseFloat( jQuery.css( this.elem, this.prop ) );
+    return typeof r == 'undefined' ? 0 : r;
+}
+
+/* function to load new content dynamically */
+function LoadNewContent(id,file){
+	$("#"+id+" .customScrollBox .content").load(file,function(){
+		mCustomScrollbars();
+	});
+}
+</script>
+<script src="jquery.mCustomScrollbar.js"></script>
+</body>
+</html>

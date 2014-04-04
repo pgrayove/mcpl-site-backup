@@ -2487,6 +2487,12 @@ iframe#author_madness2{
 	border:none;
 }
 
+iframe#author_madness3{
+	width:100%;
+	height: 225px;
+	border:none;
+}
+
 iframe#yearbook{
 	width:100%;
 	height: 2400px;

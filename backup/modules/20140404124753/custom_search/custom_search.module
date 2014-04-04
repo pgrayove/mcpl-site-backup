@@ -120,7 +120,7 @@ function custom_search_form_alter(&$form, $form_state, $form_id) {
           foreach ($vocabularies as $voc) {
             if (!variable_get('custom_search_advanced_voc' . $voc->vid . '_display', TRUE)) unset($form['advanced']['category']['#options'][$voc->name]);
           }
-          if (!count($form['advanced']['category']['#options'])) unset($form['advanced']['category']['#type']);
+          if (!count($form['advanced']['category']['#options'])) $form['advanced']['category']['#type'] = 'hidden';
         }
 
         // Content Types
@@ -128,7 +128,7 @@ function custom_search_form_alter(&$form, $form_state, $form_id) {
         foreach ($names as $name) {
           if (!variable_get('custom_search_advanced_type_' . $name . '_display', TRUE)) unset($form['advanced']['type']['#options'][$name]);
         }
-        if (!count($form['advanced']['type']['#options'])) unset($form['advanced']['type']['#type']);
+        if (!count($form['advanced']['type']['#options'])) $form['advanced']['type']['#type'] = 'hidden';
 
         if (!variable_get('custom_search_results_search', TRUE)) {
           // If basic search is hidded, original search terms are imported into advanced search.

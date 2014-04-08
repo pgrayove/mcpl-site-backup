@@ -86,7 +86,7 @@
   	 	<table id="commorg">
   	 		<?php if($node->field_url[0]['view']){ ?>
 	  	 		<tr>
-	  	 			<th>URL</th>
+	  	 			<th>Website</th>
 	  	 			<td><?php print "<a href='".$node->field_url[0]['view']."'>".$node->field_url[0]['view']."</a>"; ?></td>
 	  	 		</tr>
 	  	 	<?php } ?>

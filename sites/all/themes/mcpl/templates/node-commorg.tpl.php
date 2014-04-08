@@ -264,6 +264,12 @@
   	 				<td><?php print $node->field_commorg_year_established[0]['view']; ?></td>
   	 			</tr>
   	 		<?php } ?>
+  	 		<?php if($node->field_commorg_incorporation[0]['view']){ ?>
+  	 			<tr>
+  	 				<th>Incorporation Status</th>
+  	 				<td><?php print $node->field_commorg_incorporation[0]['view']; ?></td>
+  	 			</tr>
+  	 		<?php } ?>
   	 		<?php if($terms){ ?>
   	 			<tr>
   	 				<th>Subjects</th>

@@ -23,13 +23,13 @@ function extlinkAttach(context) {
   // Extra internal link matching.
   var extInclude = false;
   if (Drupal.settings.extlink.extInclude) {
-    extInclude = new RegExp(Drupal.settings.extlink.extInclude.replace(/\\/, '\\'), "i");
+    extInclude = new RegExp(Drupal.settings.extlink.extInclude.replace(/\\/, '\\'));
   }
 
   // Extra external link matching.
   var extExclude = false;
   if (Drupal.settings.extlink.extExclude) {
-    extExclude = new RegExp(Drupal.settings.extlink.extExclude.replace(/\\/, '\\'), "i");
+    extExclude = new RegExp(Drupal.settings.extlink.extExclude.replace(/\\/, '\\'));
   }
 
   // Extra external link CSS selector exclusion.
@@ -56,8 +56,8 @@ function extlinkAttach(context) {
     try {
       var url = this.href.toLowerCase();
       if (url.indexOf('http') == 0 
-            && (!url.match(internal_link) && !(extExclude && url.match(extExclude)))
-            || (extInclude && url.match(extInclude))
+            && (!url.match(internal_link) || (extInclude && url.match(extInclude))) 
+            && !(extExclude && url.match(extExclude)) 
             && !(extCssExclude && $(this).parents(extCssExclude).length > 0)
             && !(extCssExplicit && $(this).parents(extCssExplicit).length < 1)) {
         external_links.push(this);
@@ -117,6 +117,11 @@ function extlinkAttach(context) {
   $(external_links).click(function(e) {
     return Drupal.extlink.popupClickHandler(e);
   });
+
+  // Work around for Internet Explorer box model problems.
+  if (($.support && !($.support.boxModel === undefined) && !$.support.boxModel) || ($.browser.msie && parseInt($.browser.version) <= 7)) {
+    $('span.ext, span.mailto').css('display', 'inline-block');
+  }
 }
 
 Drupal.behaviors.extlink = function(context) {

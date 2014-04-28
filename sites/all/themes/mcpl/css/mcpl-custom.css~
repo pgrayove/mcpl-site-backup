@@ -396,6 +396,7 @@ a.block-title-link
 #block-block-173,
 #block-block-175,
 #block-block-178,
+#block-block-182,
 #block-views-library_hours-block_1,
 #block-views-library_hours-block_2
 
@@ -2781,4 +2782,35 @@ body.page-mob-events-search .views-exposed-form {
 
 body.page-mob-events-search .views-exposed-widget {
 	width: 600px;
+}
+
+
+/* Public Meeting Rooms page */
+body.page-geninfo-public-meeting-rooms img.rooms {
+	border: 1px solid #777777;
+    border-radius: 12px;
+    /*box-shadow: 1px 1px 2px #888888; */
+    font-size: 12px;
+    padding: 0;
+}
+
+.reserve {
+	margin-top: 1em;
+	text-align: center;
+	background: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+    border: 1px solid #707070 !important;
+    border-radius: 5px;
+    font-size: 0.9em;
+    padding: 5px;
+
+}
+
+a.reserve-link:hover  {
+	color: #000 !important;
+	text-decoration: none !important;
+}
+
+a.reserve-link  {
+	color: #000 !important;
+	text-decoration: none !important;
 }

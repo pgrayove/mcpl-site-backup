@@ -125,7 +125,7 @@ function custom_search_taxonomy_form_alter(&$form, $form_state, $form_id) {
             else $voc_collapsed = TRUE;
             $form['block_settings']['taxonomy'][$voc->name] = array(
               '#type'         => 'fieldset',
-              '#title'        => check_plain($voc->name),
+              '#title'        => $voc->name,
               '#collapsible'  => TRUE,
               '#collapsed'    => $voc_collapsed,
             );
@@ -158,7 +158,7 @@ function custom_search_taxonomy_form_alter(&$form, $form_state, $form_id) {
               '#type'           => 'textfield',
               '#title'          => t('Label text'),
               '#default_value'  => variable_get('custom_search_blocks_' . $delta . '_voc' . $voc->vid . '_selector_label', $voc->name),
-              '#description'    => t('Enter the label text for the selector. The default value is "@default".', array('@default' => $voc->name)),
+              '#description'    => t('Enter the label text for the selector. The default value is "!default".', array('!default' => $voc->name)),
             );
             $form['block_settings']['taxonomy'][$voc->name]['custom_search_blocks_' . $delta . '_voc' . $voc->vid . '_selector_all'] = array(
               '#type'           => 'textfield',
@@ -208,7 +208,7 @@ function custom_search_taxonomy_form_alter(&$form, $form_state, $form_id) {
       $w = 1;
       foreach ($vocabularies as $voc) {
         $form['order']['custom_search_order']['taxonomy' . $voc->vid] = array(
-          '#title'  => t('Taxonomy') . ': ' . check_plain($voc->name),
+          '#title'  => t('Taxonomy') . ': ' . $voc->name,
           '#weight' => variable_get('custom_search_taxonomy' . $voc->vid . '_weight', $w),
         );
         $form['order']['custom_search_order']['taxonomy' . $voc->vid]['sort'] = array(

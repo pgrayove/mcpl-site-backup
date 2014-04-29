@@ -2828,3 +2828,10 @@ a.reserve-link  {
 	float: right;
 	position: relative;
 }
+
+
+/* changing the div space around the social media buttons */
+
+div.meta {
+	margin-top: 4em;
+}

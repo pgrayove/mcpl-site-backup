@@ -2814,3 +2814,17 @@ a.reserve-link  {
 	color: #000 !important;
 	text-decoration: none !important;
 }
+
+/* Community Organization CSS */
+
+.commorg-left {
+	width: 200px;
+	float: left;
+	position: relative;
+}
+
+.commorg-right {
+	width: 200px;
+	float: right;
+	position: relative;
+}

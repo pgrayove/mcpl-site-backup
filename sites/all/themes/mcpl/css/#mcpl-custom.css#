@@ -2815,6 +2815,23 @@ a.reserve-link  {
 	text-decoration: none !important;
 }
 
-/* Community Organization text */
+/* Community Organization CSS */
 
-.commorg-left
+.commorg-left {
+	width: 200px;
+	float: left;
+	position: relative;
+}
+
+.commorg-right {
+	width: 200px;
+	float: right;
+	
+}
+
+
+/* changing the div space around the social media buttons */
+
+div.meta {
+	margin-top: 4em;
+}

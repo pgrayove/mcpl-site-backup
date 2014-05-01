@@ -2797,9 +2797,14 @@ body.page-geninfo-public-meeting-rooms img.rooms {
 .reserve {
 	margin-top: 1em;
 	text-align: center;
+	background: #DFDFDF;
 	background: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
     border: 1px solid #707070 !important;
-    border-radius: 5px;
+    background: -webkit-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+	background: -ms-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
     font-size: 0.9em;
     padding: 5px;
 
@@ -2829,9 +2834,20 @@ a.reserve-link  {
 	position: relative;
 }
 
+.commorg-title {
+	font-size: 12px;
+	font-style: italic;
+}
+
 
 /* changing the div space around the social media buttons */
 
 div.meta {
 	margin-top: 4em;
 }
+
+/* Computer Questions View push in div */
+
+body.page-childrens-computer-questions div.view-content {
+	margin-left: 50px;
+	}

@@ -76,8 +76,8 @@
 
   <?php if (!$page && $title): ?>
     <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <p class="commorg-title">Click on the title to view upcoming meetings at the library and links to similar organizations.</p>
   <?php endif; ?>
-
   <?php if ($unpublished): ?>
     <div class="unpublished"><?php print t('Unpublished'); ?></div>
   <?php endif; ?>
@@ -276,7 +276,8 @@
   	 				<td><?php print $terms; ?></td>
   	 			</tr>
   	 		<?php } ?>
-  	 	</table>
+		
+      </table>
   </div>
 
   <?php if ($display_submitted || $terms): ?>

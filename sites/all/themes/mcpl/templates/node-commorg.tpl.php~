@@ -77,7 +77,6 @@
   <?php if (!$page && $title): ?>
     <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
-
   <?php if ($unpublished): ?>
     <div class="unpublished"><?php print t('Unpublished'); ?></div>
   <?php endif; ?>
@@ -264,13 +263,20 @@
   	 				<td><?php print $node->field_commorg_year_established[0]['view']; ?></td>
   	 			</tr>
   	 		<?php } ?>
+  	 		<?php if($node->field_commorg_incorporation[0]['view']){ ?>
+  	 			<tr>
+  	 				<th>Incorporation Status</th>
+  	 				<td><?php print $node->field_commorg_incorporation[0]['view']; ?></td>
+  	 			</tr>
+  	 		<?php } ?>
   	 		<?php if($terms){ ?>
   	 			<tr>
   	 				<th>Subjects</th>
   	 				<td><?php print $terms; ?></td>
   	 			</tr>
   	 		<?php } ?>
-  	 	</table>
+		
+      </table>
   </div>
 
   <?php if ($display_submitted || $terms): ?>

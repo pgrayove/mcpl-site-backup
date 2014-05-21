@@ -2078,7 +2078,8 @@ body.page-node-add-kids-book-review.not-logged-in .collapsible,
 body.page-node-add-teenreview.not-logged-in .collapsible,
 body.page-node-add-review-adult.not-logged-in .collapsible,
 body.page-node-add-review-adult-summer-reading .collapsible,
-body.page-node-add-review-winter-reading .collapsible
+body.page-node-add-review-winter-reading .collapsible,
+body.page-node-add-comment .collapsible
 {
 	display: none;
 }
@@ -2105,7 +2106,8 @@ body.page-node-add-kids-book-review.not-logged-in #edit-taxonomy-tags-245-wrappe
 body.page-node-add-teenreview.not-logged-in #edit-taxonomy-tags-245-wrapper,
 body.page-node-add-review-adult.not-logged-in #edit-taxonomy-tags-245-wrapper,
 body.page-node-add-review-adult-summer-reading.not-logged-in #edit-taxonomy-tags-245-wrapper,
-body.page-node-add-review-winter-reading.not-logged-in #edit-taxonomy-tags-245-wrapper
+body.page-node-add-review-winter-reading.not-logged-in #edit-taxonomy-tags-245-wrapper,
+body.page-node-add-comment.not-logged-in #edit-taxonomy-tags-248-wrapper
  {
 	display:none;
 }
@@ -2834,10 +2836,15 @@ a.reserve-link  {
 	position: relative;
 }
 
+.commorg-title {
+	font-size: 12px;
+	font-style: italic;
+}
+
 
 /* changing the div space around the social media buttons */
 
-div.meta {
+body.node-type-childrenspage div.meta {
 	margin-top: 4em;
 }
 

@@ -66,7 +66,8 @@ p {margin-top: 0px; margin-bottom: 5px;}
 }
 .print-source_url {font-size: small;}
 .print-links {font-size: small;}
-.print-footer {text-align: center; font-size: small;}
+.print-footer {visibility: hidden;}
 
 
-h1.pf-title {font-size: large;}
+h1.pf-title {font-size: x-large;}
+h3 {font-size: medium;}

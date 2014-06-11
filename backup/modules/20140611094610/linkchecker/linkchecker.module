@@ -35,9 +35,6 @@ define('LINKCHECKER_RESERVED_DOCUMENTATION_DOMAINS', "example.com\nexample.net\n
  * - Insert view filter, http://drupal.org/project/insert_view
  *     name: insert_view/0
  *     tags: [view:my_view]
- * - Smileys filter, http://drupal.org/project/smiley
- *     name: smiley/0
- *     tags: Depends on icon set, for e.g: ":) :-) :smile:"
  * - Smileys Filter, http://drupal.org/project/smileys
  *     name: smileys/0
  *     tags: Depends on icon set, for e.g: ":) :-) :smile:"
@@ -51,7 +48,7 @@ define('LINKCHECKER_RESERVED_DOCUMENTATION_DOMAINS', "example.com\nexample.net\n
  *     name: weblinks_filter/0
  *     tags: [link: title]
  */
-define('LINKCHECKER_DEFAULT_FILTER_BLACKLIST', 'filter/1|insert_block/0|insert_node/0|insert_view/0|smiley/0|smileys/0|links_weblink/0|weblinks_embed/0|weblinks_filter/0');
+define('LINKCHECKER_DEFAULT_FILTER_BLACKLIST', 'filter/1|insert_block/0|insert_node/0|insert_view/0|smileys/0|links_weblink/0|weblinks_embed/0|weblinks_filter/0');
 
 /**
  * Implementation of hook_perm().
@@ -518,13 +515,7 @@ function _linkchecker_status_handling(&$response, $link) {
   // element (naming it with the name attribute), or by any other element
   // (naming with the id attribute).
   // See http://www.w3.org/TR/html401/struct/links.html
-  if ($response->code == 200
-    && !empty($response->data)
-    && !empty($response->headers['content-type'])
-    && !empty($response->uri['fragment'])
-    && in_array($response->headers['content-type'], array('text/html', 'application/xhtml+xml', 'application/xml'))
-    && !preg_match('/(\s[^>]*(name|id)(\s+)?=(\s+)?["\'])(' . preg_quote($response->uri['fragment'], '/') . ')(["\'][^>]*>)/i', $response->data)
-    ) {
+  if ($response->code == 200 && !empty($response->uri['fragment']) && (!empty($response->data) && !preg_match('/(\s[^>]*(name|id)=["\'])('. preg_quote($response->uri['fragment'], '/') .')(["\'][^>]*>)/i', $response->data))) {
     // Override status code 200 with status code 404 so it can be handled with
     // default status code 404 logic and custom error text.
     $response->code = 404;
@@ -752,20 +743,10 @@ function _linkchecker_status_handling(&$response, $link) {
 function linkchecker_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
   switch ($op) {
     case 'insert':
-      // The node is going to be published.
-      if (_linkchecker_scan_nodetype($node->type) && $node->status) {
-        _linkchecker_add_node_links($node);
-      }
-      break;
-
     case 'update':
       // The node is going to be published.
       if (_linkchecker_scan_nodetype($node->type) && $node->status) {
         _linkchecker_add_node_links($node);
-      }
-      else {
-        // The node is going to be unpublished.
-        _linkchecker_delete_node_links($node->nid);
       }
       break;
 

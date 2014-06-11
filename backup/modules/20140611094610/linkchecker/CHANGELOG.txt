@@ -1,16 +1,5 @@
-linkchecker 6.x-2.8, June 7, 2014
----------------------------------
-
-* Issue #2280827: Notice: Undefined index: content-type in _linkchecker_status_handling()
-* Issue #2125719 by hass: Links in unpublished nodes are still checked
-* Issue #2088461 by fonant, hass: PDF link with #page= results in "URL fragment identifier not found in content"
-* Added Smileys filter (http://drupal.org/project/smiley) to filter blacklist
-* Issue #1306498 by hass, evolvingweb: Remove unnecessary hook_requirements in linkchecker.install 
-* Issue #1923328 by larowlan: Fragment check fails when source page contains spaces between attribute name, equals and value.
-* Issue #1926558 by hass: Block extraction re-scans fail.
-
-linkchecker 6.x-2.7, February 14, 2013
---------------------------------------
+linkchecker 6.x-dev, nightly
+----------------------------
 
 * Issue #1901018 by hass: ERROR - __clone method called on non-object.
 * #1891900: Uninstall of variable 'linkchecker_check_connections_max' failed.

@@ -56,18 +56,17 @@ function extlinkAttach(context) {
     try {
       var url = this.href.toLowerCase();
       if (url.indexOf('http') == 0 
-            && (!url.match(internal_link) && !(extExclude && url.match(extExclude)))
-            || (extInclude && url.match(extInclude))
-            && !(extCssExclude && $(this).parents(extCssExclude).length > 0)
-            && !(extCssExplicit && $(this).parents(extCssExplicit).length < 1)) {
+        && ((!url.match(internal_link) && !(extExclude && url.match(extExclude))) || (extInclude && url.match(extInclude)))
+        && !(extCssExclude && $(this).parents(extCssExclude).length > 0)
+        && !(extCssExplicit && $(this).parents(extCssExplicit).length < 1)) {
         external_links.push(this);
       }
       // Do not include area tags with begin with mailto: (this prohibits
       // icons from being added to image-maps).
       else if (this.tagName != 'AREA' 
         && url.indexOf('mailto:') == 0 
-	    && !(extCssExclude && $(this).parents(extCssExclude).length > 0)
-	    && !(extCssExplicit && $(this).parents(extCssExplicit).length < 1)) {
+        && !(extCssExclude && $(this).parents(extCssExclude).length > 0)
+        && !(extCssExplicit && $(this).parents(extCssExplicit).length < 1)) {
         mailto_links.push(this);
       }
     }

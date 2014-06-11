@@ -806,9 +806,16 @@ div#block-views--exp-calendar-calendar_1 div.view-filters{
 	width:200px;
 }
 
-div#block-views--exp-calendar-calendar_1 div.views-exposed-widget #edit-term-node-tid-depth{
+div#block-views--exp-calendar-calendar_1 div.views-exposed-widget #edit-term-node-tid-depth
+{
+
 	width:190px;
 }
+
+div#block-views--exp-calendar-calendar_1 div.views-exposed-widget #edit-title {
+	width: 185px;
+}
+
 
 div.views-exposed-widget #edit-submit-calendar{
 	margin-top: 0;
@@ -2817,6 +2824,24 @@ body.page-geninfo-public-meeting-rooms img.rooms {
 
 }
 
+
+.reserve-padding {
+        margin-top: 1em;
+	margin-bottom: 10px;
+        text-align: center;
+        background: #DFDFDF;
+        background: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+    border: 1px solid #707070 !important;
+    background: -webkit-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+        background: -ms-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    padding: 10px;
+
+}
+
+
 a.reserve-link:hover  {
 	color: #000 !important;
 	text-decoration: none !important;
@@ -2858,3 +2883,24 @@ body.node-type-childrenspage div.meta {
 body.page-childrens-computer-questions div.view-content {
 	margin-left: 50px;
 	}
+
+
+*/ CSS for Treehouse page */
+
+div.treehouse-wrapper {
+	overflow: hidden;
+}
+
+div.treehouse-left {
+	margin-left: 5px;
+	width: 30%;
+	float: left;
+	postion: relative;
+}
+
+div.treehouse-right {
+	margin-right: 5px;
+	width: 65%;
+	float: right;
+	position: relative;
+}

@@ -184,7 +184,7 @@ function _print_var_generator($node, $message = NULL, $cid = NULL) {
   $print['favicon'] = theme_get_setting('toggle_favicon') ? "<link rel='shortcut icon' href='". theme_get_setting('favicon') ."' type='image/x-icon' />\n" : '';
 
   if (!empty($print_css)) {
-    drupal_add_css(strtr($print_css, array('%t' => drupal_get_path('theme', variable_get('theme_default')))));
+    drupal_add_css(strtr($print_css, array('%t' => drupal_get_path('theme', variable_get('theme_default', NULL)))));
   }
   else {
     drupal_add_css(drupal_get_path('module', 'print') .'/css/print.css');

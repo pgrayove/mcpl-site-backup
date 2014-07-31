@@ -45,20 +45,20 @@ function initPage(){
 	}
 	
 	/* BEGIN CODE FOR THE FRONT PAGE UPCOMING EVENTS LIST & CALENDAR */
-	//get the drop down menu for limiting by event type
+	// get the drop down menu for limiting by event type
 	var eventTypeMenu = document.getElementById("eventsOptionsList");
     
-	if(eventTypeMenu){
+	if(eventTypeMenu){ 
 		eventTypeMenu.onchange = limitByEventType;
-        eventTypeMenu.onchange();
+		eventTypeMenu.onchange();
 	}
-    function limitByEventType(){
-        var eventTypeChosen = eventTypeMenu.value;
-        var eventsShown = 0;
+
+	function limitByEventType(){
+	        var eventTypeChosen = eventTypeMenu.value;
+	        var eventsShown = 0;
         
-		if(document.getElementById("empty_list_msg")){
+		if(document.getElementById("empty_list_msg"))
 			$("li#empty_list_msg").remove();
-		}
 
         /* The following scans each event in the list and determines whether or not it should be
          * displayed. The criteria are as follows, display the event if:
@@ -67,35 +67,52 @@ function initPage(){
          *   3. The user specifically asks to see that event type
          */
         
-        var eventList = $('#block-views-calendar-block_1 div.item-list li');
-		var curEvent;
+		var eventList = $('#block-views-calendar-block_1 div.item-list li');
+		var curEvent, showThisEvent;
 
-        for(var evnt = 0; evnt < eventList.length; evnt ++) {
-			curEvent = $(eventList[evnt]);
-			if(
-			  eventTypeChosen == "event_type_all" ||
-              (
-				eventTypeChosen == "event_type_mcpl" &&
-				!(
-				  curEvent.hasClass('event_type_5') ||
-				  curEvent.hasClass('event_type_6'))
-				) ||
-                curEvent.hasClass(eventTypeChosen)
-			) {
-                curEvent.show();
-                eventsShown += 1;
-            }
-            else curEvent.hide();
-        }
-        
-        if(!eventsShown) {
-            var textToPrint = "";
-            
+	        for(var eventIndex = 0; eventIndex < eventList.length; eventIndex ++) {
+			curEvent = $(eventList[eventIndex]);
+
+			showThisEvent = false;
+			switch(eventTypeChosen) {
+				case "event_type_all":
+					showThisEvent = true;
+					break;
+				case "event_type_mcpl":
+					showThisEvent =
+					  !(curEvent.hasClass("event_type_5") || curEvent.hasClass("event_type_6"));
+					break;
+				default:
+					showThisEvent = curEvent.hasClass(eventTypeChosen);
+					break;
+			}
+			if(showThisEvent) {
+		                curEvent.show();
+		                eventsShown += 1;
+			}
+			else curEvent.hide();
+	        }
+	        
+	        if(!eventsShown) {
+			var textToPrint = "";
+
+			switch(eventTypeChosen) {
+				case "event_type_all":
+					textToPrint = "There are no events scheduled for today.";
+					break;
+				case "event_type_mcpl":
+					textToPrint = "There are no MCPL events scheduled for today.";
+					break;
+				default:
+					textToPrint =
+					  "No " +
+					  eventTypeMenu.options[eventTypeMenu.options.selectedIndex].text +
+					  " scheduled for today.";
+					break;
+			}
 			$(".view-display-id-block_1 ul").append("<li id='empty_list_msg' class='views-row'> " + textToPrint + "</li>");
 		} 
 	}
-
-	
 	
 	//Hide the loading indicator
 	if(document.getElementById("loadingIndicator")){

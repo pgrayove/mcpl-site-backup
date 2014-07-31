@@ -2893,14 +2893,14 @@ div.treehouse-wrapper {
 
 div.treehouse-left {
 	margin-left: 5px;
-	width: 40%;
+	width: 30%;
 	float: left;
 	postion: relative;
 }
 
 div.treehouse-right {
 	margin-right: 5px;
-	width: 40%;
+	width: 65%;
 	float: right;
 	position: relative;
 }

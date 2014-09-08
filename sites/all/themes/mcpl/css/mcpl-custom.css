@@ -2905,3 +2905,24 @@ div.treehouse-right {
 	position: relative;
 }
 
+/* CSS for online resources More Link */
+
+.right-float {
+	float: right;
+	font-size: 10px;
+}
+
+.resource {
+	text-align: center;
+	background: #DFDFDF;
+	background: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+    border: 1px solid #707070 !important;
+    background: -webkit-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+	background: -ms-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    font-size: 0.9em;
+    padding: 5px;
+
+}

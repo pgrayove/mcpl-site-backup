@@ -108,16 +108,18 @@ function template_preprocess_views_data_export_csv_header(&$vars) {
       $output = trim($output);
     }
     if (!empty($vars['options']['encoding']) && function_exists('iconv')) {
-        switch($vars['options']['encoding']) {
-          case 'ASCII':
-            $converted = iconv("UTF-8", "ASCII//TRANSLIT", $output);
-            if ($converted !== FALSE) {
-              $output = $converted;
-            }
-            break;
-        }
+      switch($vars['options']['encoding']) {
+        case 'utf8_decode':
+          $converted = utf8_decode($output);
+          break;
+        default:
+          $converted = iconv("UTF-8", $vars['options']['encoding'], $output);
+          break;
       }
-      
+      if ($converted !== FALSE) {
+        $output = $converted;
+      }
+    }
     $vars['header'][$key] = $wrap . str_replace('"', $replace_value, $output) . $wrap;
   }
 }
@@ -153,12 +155,15 @@ function template_preprocess_views_data_export_csv_body(&$vars) {
 
       if (!empty($vars['options']['encoding']) && function_exists('iconv')) {
         switch($vars['options']['encoding']) {
-          case 'ASCII':
-            $converted = iconv("UTF-8", "ASCII//TRANSLIT", $output);
-            if ($converted !== FALSE) {
-              $output = $converted;
-            }
+          case 'utf8_decode':
+            $converted = utf8_decode($output);
             break;
+          default:
+            $converted = iconv("UTF-8", $vars['options']['encoding'], $output);
+            break;
+        }
+        if ($converted !== FALSE) {
+          $output = $converted;
         }
       }
       if (!empty($vars['options']['replace_newlines'])) {
@@ -259,13 +264,15 @@ function template_preprocess_views_data_export_msoffice_body(&$vars) {
 
   // Construct the tbody of a table, see theme_table().
 
-  $ts = tablesort_init($vars['header']);
+  $header = array_values($vars['header']);
+  $ts = tablesort_init($header);
 
   $flip = array(
     'even' => 'odd',
     'odd' => 'even',
   );
   $class = 'even';
+  $output = '';
   foreach ($vars['themed_rows'] as $number => $row) {
     $attributes = array();
 
@@ -326,7 +333,8 @@ function template_preprocess_views_data_export_msoffice_header(&$vars) {
   $vars['header_row'] = '';
   $vars['header_row'] .= '<thead><tr>';
 
-  $ts = tablesort_init($vars['header']);
+  $header = array_values($vars['header']);
+  $ts = tablesort_init($header);
 
   foreach ($vars['header'] as $cell) {
     $cell = tablesort_header($cell, $header, $ts);
@@ -342,24 +350,14 @@ function template_preprocess_views_data_export_msoffice_header(&$vars) {
  * Preprocess xml output template.
  */
 function template_preprocess_views_data_export_xml_header(&$vars) {
-  // Compute the root XML node, using the base table, and appending an 's' if needed.
-  $root_node = $vars['view']->base_table;
-  if (rtrim($root_node, 's') == $root_node) {
-    $root_node .= 's';
-  }
-  $vars['root_node'] = _views_data_export_xml_tag_clean($root_node);
+  $vars['root_node'] = _views_data_export_xml_tag_clean($vars['options']['root_node']);
 }
 
 /**
  * Preprocess xml output template.
  */
 function template_preprocess_views_data_export_xml_footer(&$vars) {
-  // Compute the root XML node, using the base table, and appending an 's' if needed.
-  $root_node = $vars['view']->base_table;
-  if (rtrim($root_node, 's') == $root_node) {
-    $root_node .= 's';
-  }
-  $vars['root_node'] = _views_data_export_xml_tag_clean($root_node);
+  $vars['root_node'] = _views_data_export_xml_tag_clean($vars['options']['root_node']);
 }
 
 /**
@@ -369,8 +367,7 @@ function template_preprocess_views_data_export_xml_body(&$vars) {
   _views_data_export_header_shared_preprocess($vars);
   _views_data_export_body_shared_preprocess($vars);
 
-  // Compute the tag name based on the views base table, minus any trailing 's'.
-  $vars['item_node'] = _views_data_export_xml_tag_clean(rtrim($vars['view']->base_table, 's'));
+  $vars['item_node'] = _views_data_export_xml_tag_clean($vars['options']['item_node']);
 
   foreach ($vars['themed_rows'] as $num => $row) {
     foreach ($row as $field => $content) {
@@ -387,7 +384,9 @@ function template_preprocess_views_data_export_xml_body(&$vars) {
 
   foreach ($vars['header'] as $field => $header) {
     // If there is no field label, use 'no name'.
-    $vars['xml_tag'][$field] = !empty($header) ? $header : 'no name';
+    if (empty($header)) {
+      $header = 'no name';
+    }
     if ($vars['options']['transform']) {
       switch ($vars['options']['transform_type']) {
         case 'dash':
@@ -433,6 +432,12 @@ function _views_data_export_xml_tag_clean($tag) {
 
   // Need to trim invalid characters from the start of the string:
   $tag = ltrim($tag, $invalid_start_chars);
+
+  // As a last line of defense, if we've stripped out everything, set it to
+  // something.
+  if (empty($tag)) {
+    $tag = 'invalid-tag-name';
+  }
 
   return $tag;
 }

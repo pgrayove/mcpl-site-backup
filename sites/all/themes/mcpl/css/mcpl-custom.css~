@@ -2885,7 +2885,7 @@ body.page-childrens-computer-questions div.view-content {
 	}
 
 
-*/ CSS for Treehouse page */
+/* CSS for Treehouse page */
 
 div.treehouse-wrapper {
 	overflow: hidden;
@@ -2904,3 +2904,4 @@ div.treehouse-right {
 	float: right;
 	position: relative;
 }
+

@@ -57,9 +57,12 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
    */
   function option_definition() {
     $options = parent::option_definition();
-    $options['use_batch'] = array('default' => $this->is_compatible());
+    $options['use_batch'] = array('default' => 'no_batch');
     $options['items_per_page'] = array('default' => '0');
     $options['style_plugin']['default'] = 'views_data_export_csv';
+
+    // This is the default size of a segment when doing a batched export.
+    $options['segment_size']['default'] = 100;
 
     if (isset($options['defaults']['default']['items_per_page'])) {
       $options['defaults']['default']['items_per_page'] = FALSE;
@@ -82,7 +85,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
     $options['use_batch'] = array(
       'category' => 'page',
       'title' => t('Batched export'),
-      'value' => $this->get_option('use_batch') ? t('Yes') : t('No'),
+      'value' => ($this->get_option('use_batch') == 'batch' ? t('Yes') : t('No')),
     );
     
     if (!$this->is_compatible() && $this->get_option('use_batch')) {
@@ -105,13 +108,25 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
           '#description' => t(''),
           '#default_value' => $this->get_option('use_batch'),
           '#options' => array(
-            TRUE => t('Export data in small segments to build a complete export. Recommended for large exports sets (1000+ rows)'),
-            FALSE => t('Export data all in one segment. Possible time and memory limit issues.'),
+            'no_batch' => t('Export data all in one segment. Possible time and memory limit issues.'),
+            'batch' => t('Export data in small segments to build a complete export. Recommended for large exports sets (1000+ rows)'),
+          ),
+        );
+        // Allow the administrator to configure the number of items exported per batch.
+        $form['segment_size'] = array(
+          '#type' => 'select',
+          '#title' => t('Segment size'),
+          '#description' => t('If each row of your export consumes a lot of memory to render, then reduce this value. Higher values will generally mean that the export completes in less time but will have a higher peak memory usage.'),
+          '#options' => drupal_map_assoc(range(1, 500)),
+          '#default_value' => $this->get_option('segment_size'),
+          '#process' => array('views_process_dependency'),
+          '#dependency' => array(
+            'radio:use_batch' => array('batch'),
           ),
         );
         if (!$this->is_compatible()) {
           $form['use_batch']['#disabled'] = TRUE;
-          $form['use_batch']['#default_value'] = 0;
+          $form['use_batch']['#default_value'] = 'no_batch';
           $form['use_batch']['message'] = array (
             '#type' => 'markup',
             '#value' => theme('views_data_export_message', t('The underlying database (!db_driver) is incompatible with the batched export option and it has been disabled.', array('!db_driver' => $this->_get_database_driver()))),
@@ -131,6 +146,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
     switch ($form_state['section']) {
       case 'use_batch':
         $this->set_option('use_batch', $form_state['values']['use_batch']);
+        $this->set_option('segment_size', $form_state['values']['segment_size']);
         break;
     }
   }
@@ -140,7 +156,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
    */
   function is_batched() {
     // The source of this option may change in the future.
-    return $this->get_option('use_batch') && empty($this->view->live_preview);
+    return ($this->get_option('use_batch') == 'batch') && empty($this->view->live_preview);
   }
 
   /**
@@ -237,14 +253,14 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
     // If we were attached to another view, grab that for the final URL.
     if (!empty($_GET['attach']) && isset($this->view->display[$_GET['attach']])) {
       // Get the path of the attached display:
-      $querystring['return-url'] = $this->view->display[$_GET['attach']]->handler->get_path();
+      $querystring['return-url'] = $this->view->get_url(NULL, $this->view->display[$_GET['attach']]->handler->get_path());
     }
     $querystring_built = drupal_query_string_encode($querystring);
 
     //Set the batch off
     $batch = array(
       'operations' => array (
-        array('_views_data_export_batch_process', array($this->batched_execution_state->eid, $this->view->current_display)),
+        array('_views_data_export_batch_process', array($this->batched_execution_state->eid, $this->view->current_display,  $this->view->get_exposed_input())),
       ),
       'title' => t('Building export'),
       'init_message' => t('Export is starting up.'),
@@ -261,6 +277,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
     // e.g. Drush to grab this batch and yet execute it in
     // it's own special way
     $batch['view_name'] = $this->view->name;
+    $batch['exposed_filters'] = $this->view->get_exposed_input();
     $batch['display_id'] = $this->view->current_display;
     $batch['eid'] = $this->batched_execution_state->eid;
     $batch['__drupal_alter_by_ref']['final_destination'] = &$final_destination;
@@ -336,7 +353,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
    */
   function execute_final() {
     // Should we download the file.
-    if ($_GET['download']) {
+    if (isset($_GET['download'])) {
       // This next method will exit.
       $this->transfer_file();
     }
@@ -411,7 +428,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
           $this->view->executed = TRUE;
           // Grab our results from the index, and push them into the view result.
           // TODO: Handle external databases.
-          $result = db_query_range('SELECT * FROM {' . $this->index_tablename() . '} ORDER BY ' . $this->batched_execution_state->sandbox['weight_field_alias'] . ' ASC', 0, 100);
+          $result = db_query_range('SELECT * FROM {' . $this->index_tablename() . '} ORDER BY ' . $this->batched_execution_state->sandbox['weight_field_alias'] . ' ASC', 0, $this->get_option('segment_size'));
           $this->view->result = array();
           while ($item_arr = db_fetch_array($result)) {
             $item = new stdClass();
@@ -440,7 +457,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
   function render_complete() {
     $return_path = empty($_GET['return-url']) ? '' : $_GET['return-url'];
 
-    return theme('views_data_export_complete_page', url($this->view->get_url(), array('query' => 'download=1&eid=' . $this->batched_execution_state->eid)), $this->errors, $return_path);
+    return theme('views_data_export_complete_page', url($this->view->get_url(), array('query' => 'download=1&eid=' . $this->batched_execution_state->eid)), array(), $return_path);
   }
 
   /**
@@ -544,7 +561,16 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
         $select_aliases[] = "cl.$alias AS $hash";
       }
 
-      $insert_query = 'CREATE TABLE {' . $this->index_tablename() . '} SELECT @row := @row + 1 AS ' . $this->batched_execution_state->sandbox['weight_field_alias'] . ', ' . implode(', ', $select_aliases) . ' FROM (' . $query . ') AS cl, (SELECT @row := 0) AS r';
+      if ($this->_get_database_driver() == 'pgsql') {
+        // Create temporary sequence
+        $seq_name = $this->index_tablename() . '_seq';
+        $create_seq_query = 'CREATE TEMP sequence ' . $seq_name;
+        // query uses sequence to create row number
+        $insert_query = 'CREATE TABLE {' . $this->index_tablename() . "} AS SELECT nextval('".$seq_name."') AS " . $this->batched_execution_state->sandbox['weight_field_alias'] . ', ' . implode(', ', $select_aliases) . ' FROM (' . $query . ') AS cl';
+      }
+      else {
+        $insert_query = 'CREATE TABLE {' . $this->index_tablename() . '} SELECT @row := @row + 1 AS ' . $this->batched_execution_state->sandbox['weight_field_alias'] . ', ' . implode(', ', $select_aliases) . ' FROM (' . $query . ') AS cl, (SELECT @row := 0) AS r';
+      }
 
       // Allow for a view to query an external database.
       if (isset($view->base_database)) {
@@ -552,6 +578,9 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
         $external = TRUE;
       }
 
+      if ($this->_get_database_driver() == 'pgsql') {
+        db_query($create_seq_query);
+      }
       db_query($insert_query, $args);
 
       // Now create an index for the weight field, otherwise the queries on the
@@ -666,9 +695,11 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
   protected function outputfile_write($string) {
     $output_file = $this->outputfile_path();
     $handle = fopen($output_file, 'a');
-    if (fwrite($handle, $string) === FALSE) {
+    if (fwrite($handle, $string) === FALSE || fclose($handle) === FALSE) {
       $this->abort_export(t('Could not write to temporary output file for result export (@file). Check permissions.', array ('@file' => $output_file)));
     }
+    // Ensure that the temp file has the correct permissions.
+    chmod($output_file, 0660);
   }
 
   function abort_export($errors) {
@@ -778,7 +809,7 @@ class views_data_export_plugin_display_export extends views_plugin_display_feed 
    */
   function is_compatible() {
     $incompatible_drivers = array (
-      'pgsql',
+      //'pgsql',
     );
     $db_driver = $this->_get_database_driver();
     return !in_array($db_driver, $incompatible_drivers);

@@ -1,0 +1,12 @@
+name = Plain text linebreaks
+description = Provides a widget for plain text fields to respect linebreaks.
+core = 6.x
+package = CCK
+dependencies[] = text
+
+; Information added by drupal.org packaging script on 2011-05-27
+version = "6.x-1.0"
+core = "6.x"
+project = "cck_plain_text_linebreaks"
+datestamp = "1306506714"
+

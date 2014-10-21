@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file cck_plain_text_linebreaks.module
+ * Provides a CCK formatter for text fields which allows plain text to show linebreaks.
+ * This uses Drupal core's 'Convert line breaks into HTML' text filter.
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function cck_plain_text_linebreaks_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#cck_plain_text_linebreaks':
+      return t('Provides a CCK formatter for text fields which allows plain text to show linebreaks.');
+  }
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function cck_plain_text_linebreaks_theme($existing, $type, $theme, $path) {
+  return array(
+    'cck_plain_text_linebreaks_formatter_plain_linebreaks' => array(
+      'arguments' => array('element' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_field_formatter_info().
+ */
+function cck_plain_text_linebreaks_field_formatter_info() {
+  return array(
+    'plain_linebreaks' => array(
+      'label' => t('Plain text with linebreaks'),
+      'field types' => array('text'),
+      'multiple values' => CONTENT_HANDLE_CORE,
+    ),
+  );
+}
+
+/**
+ * Theme function for 'plain linebreaks' text field formatter.
+ */
+function theme_cck_plain_text_linebreaks_formatter_plain_linebreaks($element) {
+  return ($allowed = _text_allowed_values($element)) ? $allowed : _filter_autop($element['#item']['safe']);
+}

@@ -106,13 +106,54 @@ DirectoryIndex index.php
   # uncomment the following line:
   # RewriteBase /
 
+# To redirect all users to mcpl.info/bookblog from
+  # bookblogblog.mcpl.info
+  RewriteCond %{HTTP_HOST} ^bookblog.mcpl.info$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.bookblog.mcpl.info$
+  RewriteRule ^.*$ "http://mcpl.info\/bookblog" [R=301,L]
+
+# To redirect all users to mcpl.info/moviemusicblog from
+  # moviemusicblog.mcpl.info
+  RewriteCond %{HTTP_HOST} ^moviemusicblog.mcpl.info$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.moviemusicblog.mcpl.info$
+  RewriteRule ^.*$ "http://mcpl.info\/moviemusicblog" [R=301,L]
+
+# To redirect all users to mcpl.info/childrensblog from
+  # childrensblog.mcpl.info
+  RewriteCond %{HTTP_HOST} ^childrensblog.mcpl.info$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.childrensblog.mcpl.info$
+  RewriteRule ^.*$ "http://mcpl.info\/childrensblog" [R=301,L]
+
+# To redirect all users to mcpl.info/geninfo/monroe-county-timeline from
+  # timeline.mcpl.info
+  RewriteCond %{HTTP_HOST} ^timeline.mcpl.info$ [OR]
+  RewriteCond %{HTTP_HOST} ^timeline.monroe.lib.in.us/$
+  RewriteRule ^.*$ "http://mcpl.info\/geninfo\/monroe-county-timeline" [R=301,L]
+
+# To redirect all users to mcpl.info/money/its-your-money from
+  # timeline.mcpl.info
+  RewriteCond %{HTTP_HOST} ^money.mcpl.info$ [OR]
+  RewriteCond %{HTTP_HOST} ^money.monroe.lib.in.us/$
+  RewriteRule ^.*$ "http://mcpl.info\/money/its-your-money" [R=301,L]
+
+# To redirect all users to mcpl.info/indiana/indiana-bedrock from
+  # timeline.mcpl.info
+  RewriteCond %{HTTP_HOST} ^indianabedrock.org$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.indianabedrock.org/$
+  RewriteRule ^.*$ "http://mcpl.info\/indiana/indiana-bedrock" [R=301,L]
+
+
+# To redirect calendar pages
+  RedirectPermanent /page/teens-calendar http://mcpl.info/calendar?term_node_tid_depth[]=11&term_node_tid_depth[]=4
+  RedirectPermanent /page/adults-calendar http://mcpl.info/calendar?term_node_tid_depth[]=7&term_node_tid_depth[]=3
+  RedirectPermanent /page/technology-calendar http://mcpl.info/calendar?term_node_tid_depth[]=10&term_node_tid_depth[]=970
+
+
   # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 </IfModule>
-
-
 
 # $Id$

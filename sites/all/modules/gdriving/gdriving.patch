@@ -1,0 +1,171 @@
+Index: css/gdriving.css
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/gdriving/css/gdriving.css,v
+retrieving revision 1.1.2.1
+diff -u -r1.1.2.1 gdriving.css
+--- css/gdriving.css	5 Feb 2010 18:40:25 -0000	1.1.2.1
++++ css/gdriving.css	22 Jun 2010 11:58:53 -0000
+@@ -1,6 +1,6 @@
+ /* $Id: gdriving.css,v 1.1.2.1 2010/02/05 18:40:25 tyabut Exp $ */
+ .directionsBack {
+-  visibility: hidden;
++  display: none;
+ }
+ 
+ .directionsFrom {
+@@ -8,7 +8,7 @@
+ }
+ 
+ .directionsTo {
+-  visibility: hidden;
++  display: none;
+ }
+ 
+ .directionsExtended {
+Index: gdriving-marker.tpl.php
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/gdriving/gdriving-marker.tpl.php,v
+retrieving revision 1.1.2.2
+diff -u -r1.1.2.2 gdriving-marker.tpl.php
+--- gdriving-marker.tpl.php	12 Apr 2010 21:59:04 -0000	1.1.2.2
++++ gdriving-marker.tpl.php	21 Jun 2010 22:36:22 -0000
+@@ -11,42 +11,44 @@
+ 
+ ?>
+ <div class="directions">
+-  <p><?php echo t('Directions'); ?>: <a href="javascript:Drupal.gdriving.directionsToHereFormDisplay()"><?php echo t('To here'); ?></a> - <a href="javascript:Drupal.gdriving.directionsFromHereFormDisplay()"><?php echo t('From here'); ?></a></p>
++  <p><?php echo t('Directions'); ?>: <a href="javascript:Drupal.gdriving.directionsToHereFormDisplay('<?php echo $map_id; ?>')"><?php echo t('To here'); ?></a> - <a href="javascript:Drupal.gdriving.directionsFromHereFormDisplay('<?php echo $map_id; ?>')"><?php echo t('From here'); ?></a></p>
+ </div>
+ <div class="directionsTo">
+-<p><acronym title="<?php echo t($tooltip); ?>"><?php echo t('Start'); ?></acronym>:
+-<br />
+-<span class="small"><?php echo $gdriving_example; ?></span>
+-<br />
+-<form action="javascript:Drupal.gdriving.getDirections()">
+-  <?php if($show_direction_types): ?>
+-  <input type="radio" name="gdriving_type" id="gdriving_driving" value="driving" checked="checked" /><label for="gdriving_driving"><?php echo t('Driving Directions'); ?></label>
+-  <input type="radio" name="gdriving_type" id="gdriving_walking" value="walking" /><label for="gdriving_walking"><?php echo t('Walking Directions'); ?></label>
+-  <br />
+-  <?php endif; ?>
+-  <input type="text" size="40" maxlength="100" name="saddr" class="saddr" value="" />
+-  <input type="hidden" class="daddr" name="daddr" value="<?php echo $latitude; ?>,<?php echo $longitude; ?>(<?php echo $name; ?>)" />
+-  <input value="<?php echo t('Get Directions'); ?>" type="submit" class="gdriving_submit" />
+-</form>
+-</p>
++  <p>
++    <acronym title="<?php echo t($tooltip); ?>"><?php echo t('Start'); ?></acronym>:
++    <br />
++    <span class="small"><?php echo $gdriving_example; ?></span>
++    <br />
++    <form action="javascript:Drupal.gdriving.getDirections()">
++      <?php if($show_direction_types): ?>
++        <input type="radio" name="gdriving_type" id="gdriving_driving" value="driving" checked="checked" /><label for="gdriving_driving"><?php echo t('Driving Directions'); ?></label>
++        <input type="radio" name="gdriving_type" id="gdriving_walking" value="walking" /><label for="gdriving_walking"><?php echo t('Walking Directions'); ?></label>
++        <br />
++      <?php endif; ?>
++      <input type="text" size="40" maxlength="100" name="saddr" class="saddr" value="" />
++      <input type="hidden" class="daddr" name="daddr" value="<?php echo $latitude; ?>,<?php echo $longitude; ?>(<?php echo $name; ?>)" />
++      <input value="<?php echo t('Get Directions'); ?>" type="submit" class="gdriving_submit" />
++    </form>
++  </p>
+ </div>
+ <div class="directionsFrom">
+-<p><acronym title="<?php echo t($tooltip); ?>"><?php echo t('End'); ?></acronym>:
+-<br />
+-<span class="small"><?php echo $gdriving_example; ?></span>
+-<br />
+-<form action="javascript:Drupal.gdriving.getDirections()">
+-  <?php if($show_direction_types): ?>
+-  <input type="radio" name="gdriving_type" id="gdriving_driving" value="driving" checked="checked" /><label for="gdriving_driving"><?php echo t('Driving Directions'); ?></label>
+-  <input type="radio" name="gdriving_type" id="gdriving_walking" value="walking" /><label for="gdriving_walking"><?php echo t('Walking Directions'); ?></label>
+-  <br />
+-  <?php endif; ?>
+-  <input type="text" size="40" maxlength="100" name="daddr" class="daddr" value="" />
+-  <input type="hidden" class="saddr" name="saddr" value="<?php echo $latitude; ?>,<?php echo $longitude; ?>(<?php echo $name; ?>)" />
+-  <input value="<?php echo t('Get Directions'); ?>" type="submit" class="gdriving_submit" />
+-</form>
+-</p>
++  <p>
++    <acronym title="<?php echo t($tooltip); ?>"><?php echo t('End'); ?></acronym>:
++    <br />
++    <span class="small"><?php echo $gdriving_example; ?></span>
++    <br />
++    <form action="javascript:Drupal.gdriving.getDirections()">
++      <?php if($show_direction_types): ?>
++      <input type="radio" name="gdriving_type" id="gdriving_driving" value="driving" checked="checked" /><label for="gdriving_driving"><?php echo t('Driving Directions'); ?></label>
++      <input type="radio" name="gdriving_type" id="gdriving_walking" value="walking" /><label for="gdriving_walking"><?php echo t('Walking Directions'); ?></label>
++      <br />
++      <?php endif; ?>
++      <input type="text" size="40" maxlength="100" name="daddr" class="daddr" value="" />
++      <input type="hidden" class="saddr" name="saddr" value="<?php echo $latitude; ?>,<?php echo $longitude; ?>(<?php echo $name; ?>)" />
++      <input value="<?php echo t('Get Directions'); ?>" type="submit" class="gdriving_submit" />
++    </form>
++  </p>
+ </div>
+ <div class="directionsBack">
+-<a href="javascript:Drupal.gdriving.backToNodeInfo()"><?php echo $back_text; ?></a>
++  <a href="javascript:Drupal.gdriving.backToNodeInfo('<?php echo $map_id; ?>')"><?php echo $back_text; ?></a>
+ </div>
+Index: gdriving.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/gdriving/gdriving.module,v
+retrieving revision 1.1.2.1
+diff -u -r1.1.2.1 gdriving.module
+--- gdriving.module	5 Feb 2010 18:40:25 -0000	1.1.2.1
++++ gdriving.module	21 Jun 2010 22:35:01 -0000
+@@ -172,6 +172,7 @@
+         'key'                  => '0',
+         'latitude'             => '0',
+         'longitude'            => '0',
++        'map_id'               => '0',
+         'show_direction_types' => variable_get('gdriving_show_direction_types', 0),
+         'back_text'            => variable_get('gdriving_back_link', 'Back to node information'),
+         'tooltip'              => variable_get('gdriving_tooltip', 'Combination of Address, City, State, Zip Code'),
+@@ -249,7 +250,7 @@
+       if (count($map['markers']) > 0) {
+         foreach ($map['markers'] as $key => &$arr) {
+           $name = variable_get('site_name', '') . " $key";
+-          $arr['text'] .= theme('gdriving_marker', $name, $key, $arr['latitude'], $arr['longitude']);
++          $arr['text'] .= theme('gdriving_marker', $name, $key, $arr['latitude'], $arr['longitude'], $map['id']);
+         }
+       }
+       break;
+Index: js/gdriving.js
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/gdriving/js/gdriving.js,v
+retrieving revision 1.1.2.2
+diff -u -r1.1.2.2 gdriving.js
+--- js/gdriving.js	12 Apr 2010 21:59:05 -0000	1.1.2.2
++++ js/gdriving.js	21 Jun 2010 22:34:38 -0000
+@@ -11,20 +11,22 @@
+ /**
+  * Displays the directions from here form
+  */
+-Drupal.gdriving.directionsFromHereFormDisplay = function() {
+-  $('.directions, .directionsTo').css({"display": "none", "visibility": "hidden"});
+-  $('.directionsBack, .directionsFrom').css({"display": "block", "visibility": "visible"});
+-  $('.infoExtended').css({"display": "none", "visibility": "hidden"});
++Drupal.gdriving.directionsFromHereFormDisplay = function(mapId) {
++  $('.directions, .directionsTo, .infoExtended').hide();
++  $('.directionsFrom, .directionsBack').show() .directionsFrom').css({"display": "none", "visibility": "hidden"});
+-  $('.directionsBack, .directionsTo').css({"display": "block", "visibility": "visible"});
+-  $('.infoExtended').css({"display": "none", "visibility": "hidden"});
++Drupal.gdriving.directionsToHereFormDisplay = function(mapId) {
++  $('.directions, .directionsFrom, .infoExtended').hide();
++  $('.directionsTo, .directionsBack').show();
++  Drupal.gmap.getMap(mapId).map.updateInfoWindow();
+ }
+ 
+ /**
+  * Displays original marker information
+  */
+-Drupal.gdriving.backToNodeInfo = function() {
+-  $('.directionsBack, .directionsFrom, .directionsTo').css({"display": "none", "visibility": "hidden"});
+-  $('.directions, .infoExtended').css({"display": "block", "visibility": "visible"});
++Drupal.gdriving.backToNodeInfo = function(mapId) {
++  $('.directionsTo, .directionsBack, .directionsFrom').hide();
++  $('.directions, .infoExtended').show();
++  Drupal.gmap.getMap(mapId).map.updateInfoWindow();
+ }
+ 
+ /**

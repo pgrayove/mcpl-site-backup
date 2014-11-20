@@ -259,3 +259,26 @@ ini_set('url_rewriter.tags',        '');
 # );
 
 
+# Added to see if this helps with Quicktabs possibly overloading server
+$error_404_header = 'HTTP/1.0 404 Not Found';
+$error_404_text  = '<html><head><title>404 Not Found';
+$error_404_text .= '</title></head><body><h1>Not Found</h1>';
+$error_404_text .= '<p>The requested URL was not found on this server.';
+$error_404_text .= '</p></body></html>';
+
+$bot_ua = array(
+		'bot',
+		'spider',
+		'crawler',
+		'slurp',
+		);
+
+if (FALSE !== strpos($_SERVER['QUERY_STRING'], 'quicktabs')) {
+  foreach ($bot_ua as $bot) {
+    if (FALSE !== stripos($_SERVER['HTTP_USER_AGENT'], $bot)) {
+      header($error_404_header);
+      print $error_404_text;
+      exit();
+    }
+  }
+ }

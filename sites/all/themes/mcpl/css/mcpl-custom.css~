@@ -2558,6 +2558,10 @@ iframe#author_alert #NAV{
 	border: 2px solid #339900;
 }
 
+.section-little-free-map .gmap {
+	border: 2px solid #339900;
+}
+
 #blog-node ul.links li.print_mail,
 #blog-node ul.links li.print_pdf{
 	padding:0;
@@ -2627,6 +2631,13 @@ body.section-reviews-titles .views-label-field-teenreview-rating-rating {
 	}
 
 body.section-reviews-titles .views-field-view-node .field-content {
+	font-weight: bold;
+}
+
+
+/* Little Free Libraries Map */
+
+body.section-little-free-map div.views-field-title {
 	font-weight: bold;
 }
 
@@ -2927,12 +2938,23 @@ div.treehouse-right {
 
 }
 
-/* CSS for Patron Comment form */
-
-body.page-node-add-comment a {
-	display: none;
+/*START CUSTOM FLICKR CSS*/
+.flickr-photo-img {
+-webkit-border-radius: 1.3em;
+-moz-border-radius: 1.3em;
+-ms-border-radius: 1.3em;
+-o-border-radius: 1.3em;
+border-radius: 1.3em;
+height: 150px;
 }
 
-body.page-node-add-comment ul.tips {
-	display: none;
+span.flickr-credit {
+padding: 5px;
+/*Additional space between the image and caption box*/
+margin-top: 3px;
+}
+
+/* Shurly module block */
+#edit-long-url {
+	width: 120px;
 }

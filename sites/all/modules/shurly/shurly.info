@@ -1,0 +1,11 @@
+name = ShURLy
+package = ShURLy
+description = A complete short URL service.
+dependencies[] = views
+core = 6.x
+; Information added by Drupal.org packaging script on 2014-11-09
+version = "6.x-1.2"
+core = "6.x"
+project = "shurly"
+datestamp = "1415553481"
+

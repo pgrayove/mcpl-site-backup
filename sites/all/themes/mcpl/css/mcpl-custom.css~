@@ -2641,7 +2641,17 @@ body.section-little-free-map div.views-field-title {
 	font-weight: bold;
 }
 
+.directionsTo {
+    visibility: hidden;
+}
 
+.directionsFrom {
+    visibility: hidden;
+}
+
+.directionsBack {
+    visibility: hidden;
+}
 
 /* PARKING */
 
@@ -2958,3 +2968,33 @@ margin-top: 3px;
 #edit-long-url {
 	width: 120px;
 }
+
+
+/****** READ-O Winter Reading **********/
+
+body.page-geninfo-read-o .form-item label {
+	font-size: x-small;
+	font-weight: normal;
+}
+
+body.page-geninfo-read-o .webpform-layout-box {
+	padding-left: 5px;
+}
+
+body.page-geninfo-read-o div.description {
+	font-size: x-small;
+}
+
+body.page-geninfo-read-o .webform-layout-box.horiz > *, .webform-layout-box.equal > * {
+	box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    word-spacing: normal;
+	background-color: silver;
+	height: 178px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: white solid 2px;
+
+}
+

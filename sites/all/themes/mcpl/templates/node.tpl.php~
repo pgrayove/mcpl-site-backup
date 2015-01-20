@@ -102,6 +102,7 @@
 
   <?php print $links; ?>
   <?php
+        print "<a name='pdf-links'></a>";
   	print "<ul class='print_links'>";
   	print "<li class='print_page'><a href='/print{$_SERVER['REQUEST_URI']}' title='Print this page' rel='nofollow'><img src='/sites/all/modules/print/icons/print_icon.gif' alt='Email this page' /></a></li>";
   	print "<li class='print_mail'><a href='/printmail{$_SERVER['REQUEST_URI']}' title='Send this page by email' rel='nofollow'><img src='/sites/all/modules/print/icons/mail_icon.gif' alt='Email this page' /></a></li>";

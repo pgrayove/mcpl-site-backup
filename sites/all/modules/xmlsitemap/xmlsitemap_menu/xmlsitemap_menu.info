@@ -8,9 +8,9 @@ files[] = xmlsitemap_menu.module
 files[] = xmlsitemap_menu.install
 files[] = xmlsitemap_menu.test
 
-; Information added by Drupal.org packaging script on 2014-03-17
-version = "6.x-2.0"
+; Information added by Drupal.org packaging script on 2014-12-05
+version = "6.x-2.1"
 core = "6.x"
 project = "xmlsitemap"
-datestamp = "1395017031"
+datestamp = "1417746205"
 

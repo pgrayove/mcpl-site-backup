@@ -276,9 +276,16 @@
   	 				<td><?php print $terms; ?></td>
   	 			</tr>
   	 		<?php } ?>
-		
+	<?php if ($node->changed): ?>
+	    <tr>
+	       <th>Updated</th>
+	       <td><?php print strftime( "%B %d, %Y", $node->changed)?></td>
+	       </tr><?php endif; ?>	
       </table>
   </div>
+
+      
+
 
   <?php if ($display_submitted || $terms): ?>
     <div class="meta">

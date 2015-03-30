@@ -276,6 +276,18 @@
   	 				<td><?php print $terms; ?></td>
   	 			</tr>
   	 		<?php } ?>
+  	 		<?php if($node->field_commorg_meeting_link[0]['view']){ ?>
+  	 			<tr>
+  	 				<th>Meetings at the Library</th>
+  	 				<td><?php print $node->field_commorg_meeting_link[0]['view']; ?></td>
+  	 			</tr>
+  	 		<?php } ?>
+  	 		<?php if($node->field_commorg_ein[0]['view']){ ?>
+  	 			<tr>
+  	 				<th>EIN</th>
+  	 				<td><?php print $node->field_commorg_ein[0]['view']; ?></td>
+  	 			</tr>
+  	 		<?php } ?>
 	<?php if ($node->changed): ?>
 	    <tr>
 	       <th>Updated</th>

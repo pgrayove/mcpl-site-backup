@@ -280,7 +280,7 @@ function _location_expand_location($element) {
     // If State/Province is using the select widget, update the element's options.
     if ($field == 'province' && $fsettings[$field]['widget'] == 'select') {
       // We are building the element for the first time
-      if (!isset($element['value']['country'])) {
+      if (!isset($element['#value']['country'])) {
         $country = $fdefaults['country'];
       }
       else {

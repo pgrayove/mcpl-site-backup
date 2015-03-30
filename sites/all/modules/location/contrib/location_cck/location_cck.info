@@ -5,9 +5,9 @@ package = CCK
 dependencies[] = location
 dependencies[] = content
 
-; Information added by drupal.org packaging script on 2013-09-11
-version = "6.x-3.3"
+; Information added by Drupal.org packaging script on 2015-03-27
+version = "6.x-3.4"
 core = "6.x"
 project = "location"
-datestamp = "1378891912"
+datestamp = "1427452474"
 

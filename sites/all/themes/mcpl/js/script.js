@@ -14,13 +14,13 @@ function initPage(){
 		if(this.id == "quicktabs-tab-search_tabs-1"){
 			document.getElementById("quicktabs_container_search_tabs").style.backgroundColor = "#99CC33"; //Color of the search site tab
 			document.getElementById("edit-query").style.color = "silver";
-			document.getElementById("edit-query").value = "Search Our Site";
+			document.getElementById("edit-query").value = "";
 			document.getElementById("edit-query").onfocus = activateSearchBox;
 			document.getElementById("edit-query").onblur = deactivateSearchBox;
 		} else {
 			document.getElementById("quicktabs_container_search_tabs").style.backgroundColor = "#FFF"; //Color of the search catalog tab
 			document.getElementById("Term").style.color = "silver";
-			document.getElementById("Term").value = "Search Our Catalog";
+			document.getElementById("Term").value = "";
 			document.getElementById("Term").onfocus = activateSearchBox;
 			document.getElementById("Term").onblur = deactivateSearchBox;
 		}
@@ -120,7 +120,7 @@ function initPage(){
 	}
 			
 	//Display title when the user hovers over a staff picks list item on the front page or the teens homepage
-	if($("body").hasClass("front") || $("body").hasClass("page-teens") || $("body").hasClass("page-geninfo-disability-services")){
+	if($("body").hasClass("front") || $("body").hasClass("page-category-blogs-teens-ground-floor") || $("body").hasClass("page-geninfo-disability-services")){
 		$(".xmlfeedimg, .staffpicks").mouseenter(function(){
 				var itemTitle = this.alt;
 				$(this).parents("div.block-views").append("<p class=\"hover-title\">" + itemTitle + "</p>");

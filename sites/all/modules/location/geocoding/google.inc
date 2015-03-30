@@ -114,7 +114,6 @@ function google_geocode_location($location = array()) {
   $query = array(
     'region' => $location['country'],
     'address' => _google_geocode_flatten($location),
-    'components' => _google_geocode_get_components($location),
     'sensor' => 'false', // Required by TOS.
   );
 
@@ -126,11 +125,11 @@ function google_geocode_location($location = array()) {
   $http_reply = drupal_http_request($url);
   $data = json_decode($http_reply->data);
 
-  $status_code = $data->status;
-  if ($status_code != 'OK') {
+  if ($data->status != 'OK') {
     watchdog('location', 'Google geocoding returned status code: %status_code for the query url: %url', array('%status_code' => $data->status, '%url' => $url));
     return NULL;
   }
+
   $location = $data->results[0]->geometry->location;
 
   return array('lat' => $location->lat, 'lon' => $location->lng);
@@ -141,29 +140,6 @@ function google_geocode_location($location = array()) {
  */
 function google_geocode_settings() {
   $form = array();
-  $key = '';
-  if (function_exists('gmap_get_key')) {
-    $key = gmap_get_key();
-  }
-
-  if (!empty($key)) {
-    $form['location_geocode_google_apikey'] = array(
-      '#type' => 'item',
-      '#title' => t('Google Maps API Key'),
-      '#value' => $key,
-      '#description' => t('The key in use was automatically provided by GMap.'),
-    );
-  }
-  else {
-    $form['location_geocode_google_apikey'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Google Maps API Key'),
-      '#size' => 64,
-      '#maxlength' => 128,
-      '#default_value' => variable_get('location_geocode_google_apikey', ''),
-      '#description' => t('In order to use the Google Maps API geocoding web-service, you will need a Google Maps API Key.  You can obtain one at the !sign_up_link for the !google_maps_api.  PLEASE NOTE: You will <em>not</em> have to re-enter your API key for each country for which you have selected Google Maps for geocoding.  This setting is global.', array('!sign_up_link' => '<a href="http://www.google.com/apis/maps/signup.html">sign-up page</a>', '!google_maps_api' => '<a href="http://www.google.com/apis/maps/">Google Maps API</a>'))
-    );
-  }
 
   $country = arg(4);
   if ($country) {
@@ -197,19 +173,12 @@ function _google_geocode_flatten($location = array()) {
     $address .= $location['city'];
   }
 
-  if (!empty($location['province'])) {
+  // Using province short code regularlyy gives no results.
+  if (!empty($location['province_name'])) {
     if (!empty($address)) {
       $address .= ', ';
     }
-
-    // @@@ Fix this!
-    if (substr($location['province'], 0, 3) == $location['country'] . '-') {
-      $address .= substr($location['province'], 3);
-      watchdog('Location', 'BUG: Country found in province attribute.');
-    }
-    else {
-      $address .= $location['province'];
-    }
+    $address .= $location['province_name'];
   }
 
   if (!empty($location['postal_code'])) {
@@ -256,14 +225,8 @@ function _google_geocode_get_components($location = array()) {
   if (!empty($location['city'])) {
     $components[] = 'locality:' . $location['city'];
   }
-  if (!empty($location['province'])) {
-    // @@@ Fix this!
-    if (!empty($location['country']) && substr($location['province'], 0, 3) == $location['country'] . '-') {
-      $components[] = 'administrative_area:' . substr($location['province'], 3);
-    }
-    else {
-      $components[] = 'administrative_area:' . $location['province'];
-    }
+  if (!empty($location['province_name'])) {
+    $components[] = 'administrative_area:' . $location['province_name'];
   }
   if (!empty($location['postal_code'])) {
     $components[] = 'postal_code:' . $location['postal_code'];

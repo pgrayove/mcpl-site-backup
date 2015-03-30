@@ -342,13 +342,14 @@ body.front div.meta ul.print_links {
 	display: none;
 }
 
-
-body.not-front .region-sidebar-first,
-body.not-front .region-sidebar-second{
+/*  changed to everywhere */
+body .region-sidebar-first,
+body .region-sidebar-second{
 	margin-top: 0.5em;
 }
 
-body.not-front h2.section_title{
+/*  changed to everywhere */
+body h2.section_title{
 	margin:0;
 }
 
@@ -398,7 +399,8 @@ a.block-title-link
 #block-block-178,
 #block-block-182,
 #block-views-library_hours-block_1,
-#block-views-library_hours-block_2
+#block-views-library_hours-block_2,
+#block-block-16
 
 
  {
@@ -935,7 +937,7 @@ div#nodelink{ /* align the "more" link */
 
 /* FRONT PAGE CALENDAR & UPCOMING EVENTS */
 
-div#block-views-calendar-calendar_block_1{
+div#block-views-calendar-calendar_block_1 {
 	display: none;
 	position: relative;
 	bottom: 24px;
@@ -1033,17 +1035,18 @@ table.mini td.future.has-events{
 
 }
 
-div#block-views-calendar-block_1{
+div#block-views-calendar-block_1 {
 	position: relative;
 	z-index: 0;
 }
 
-div.region-upcoming-events h2.title{
+div.region-upcoming-events h2.title
+{
 	font-size: 16px;
 	text-align: center;
 }
 
-div#block-views-calendar-block_1 h2{
+div#block-views-calendar-block_1 h2 {
 	font-size: 16px;
 	text-align: center;
         /*font-size: 14px;*/
@@ -1068,7 +1071,7 @@ div#block-views-calendar-block_1 h2{
 	margin: 0 0 0 10px;
 }
 
-div#block-views-calendar-block_1 .content{
+div#block-views-calendar-block_1 .content {
 /*
 	overflow-y: hidden;
 	max-height:390px;
@@ -1080,7 +1083,7 @@ div#block-views-calendar-block_1 .content{
 	font-size:11px;
 }
 
-div#block-views-calendar-block_1 .content .more-link{
+div#block-views-calendar-block_1 .content .more-link {
 	padding: 0 4px 4px 0;
 	text-align: center;
 }
@@ -1089,12 +1092,12 @@ p#loadingIndicatorContainer{
 	text-align: center;
 }
 
-div#block-views-calendar-block_1 ul{
+div#block-views-calendar-block_1 ul {
 	margin: 0;
 	padding: 0;
 }
 
-div#block-views-calendar-block_1 ul li{
+div#block-views-calendar-block_1 ul li {
 	display: none;
 /*
 	-webkit-border-radius: 4px;
@@ -1110,7 +1113,7 @@ div#block-views-calendar-block_1 ul li{
 	padding: 4px 4px 4px 8px;
 }
 
-div#block-views-calendar-block_1 ul li div.views-field-title{
+div#block-views-calendar-block_1 ul li div.views-field-title {
 	padding-right: 4px;
 }
 
@@ -1343,22 +1346,29 @@ body.front img.xmlfeedimg,
 body.front img.staffpicks,
 body.page-fiction-new-arrivals img.xmlfeedimg, 
 body.page-fiction-test-new-arrivals img.xmlfeedimg,
-body.page-teens img.xmlfeedimg,
-body.page-teens img.staffpicks,
-body.page-teens-teens img.xmlfeedimg,
-body.page-teens-teens img.staffpicks,
 body.page-geninfo-disability-services img.xmlfeedimg,
 body.page-geninfo-disability-services img.staffpicks {
 	margin: 14px;
 	border: 2px solid #777;
 	/* height: 115px;
-	width: 80px; */
+	width: 80px; */ 
 }
+
+body.page-category-blogs-teens-ground-floor img.xmlfeedimg,
+body.page-category-blogs-teens-ground-floor img.staffpicks,
+body.page-category-blogs-teens-ground-floor img.xmlfeedimg,
+body.page-category-blogs-teens-ground-floor img.staffpicks {
+	border: 2px solid #777;
+}
+
+
 
 body.front img.xmlfeedimg:hover,
 body.page-fiction-new-arrivals img.xmlfeedimg:hover, 
 body.page-fiction-test-new-arrivals img.xmlfeedimg:hover,
 body.front img.staffpicks:hover
+body.page-category-blogs-teens-ground-floor img.xmlfeedimg:hover,
+body.page-category-blogs-teens-ground-floor img.staffpicks:hover,
 body.page-geninfo-disability-services img.xmlfeedimg:hover,
 body.page-geninfo-disability-services img.staffpicks:hover
 {
@@ -1369,16 +1379,16 @@ body.front .region-content-bottom .block-views,
 body.page-fiction-new-arrivals .region-content-top .block-views,
 body.page-fiction-test-new-arrivals .region-content-top .block-views,
 body.page-teens .region-content-bottom .block-views
-body.page-teens-teens .region-content-bottom .block-views,
+body.page-category-blogs-teens-ground-floor .region-sidebar-first .block-views,
 body.page-geninfo-disability-services .region-content-bottom .block-views{
 	position: relative;
 }
 
 body.front p.hover-title,
-body.page-teens p.hover-title,
+body.page-category-blogs-teens-ground-floor p.hover-title,
 body.page-fiction-new-arrivals p.hover-title,
 body.page-fiction-test-new-arrivals p.hover-title,
-body.page-teens-teens p.hover-title,
+body.page-category-blogs-teens-ground-floor p.hover-title,
 body.page-geninfo-disability-services p.hover-title {
 
 	text-align: center;
@@ -1417,7 +1427,7 @@ div#block-views-calendar-block_1 title.h2 {
 	
 }
 
-div#block-views-calendar-block_1 h2{
+div#block-views-calendar-block_1 h2 {
 	padding-bottom: 0.5em;
 	text-shadow: 1px 1px 1px #333;
 }
@@ -1555,9 +1565,9 @@ div.region-content-bottom div.block-views .view-content,
 div.region-content-top div.block-views .view-content
 {
 
-	height: 175px;
+/*	height: 175px; */
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: hidden; 
 }
 
 div.region-content-bottom div.block-views h2.title,
@@ -1756,8 +1766,9 @@ div.view-pathfinders .views-field-field-isbn-upc-value{
 	right:0;
 }
 
-body.not-front .region-sidebar-first .block,
-body.not-front .region-sidebar-second .block{
+/*  changed to everywhere */
+body .region-sidebar-first .block,
+body .region-sidebar-second .block{
 	font-size: 12px;
 	border: 1px solid #777;
 	-webkit-box-shadow: 1px 1px 2px #888888; 
@@ -1774,8 +1785,9 @@ body.not-front .region-sidebar-second .block{
 	padding:10px;
 }
 
-body.not-front .region-sidebar-first .block h2.title,
-body.not-front .region-sidebar-second .block h2.title{
+/*  changed to everywhere */
+body .region-sidebar-first .block h2.title,
+body .region-sidebar-second .block h2.title{
 	font-size: 14px;
 	background-color: #339900;
 	border-bottom: 2px solid #777;
@@ -2303,8 +2315,9 @@ div.view-book-reviews ul li{
 	padding:0.5em;
 }
 
-body.not-front .region-sidebar-first .block.block-menu_block,
-body.not-front .region-sidebar-second .block.block-menu_block{
+/*  changed to everywhere */
+body .region-sidebar-first .block.block-menu_block,
+body .region-sidebar-second .block.block-menu_block{
 	border:none;
 	box-shadow: none;
 	margin-top:8px;
@@ -2496,7 +2509,15 @@ iframe#monroe_index{
 	border:none;
 }
 
+iframe#calendar{
+	width:100%;
+	height: 5000px; 
+	border:none;
+}
 
+div#divholder .event_divHolder {
+     padding: 0px;
+}
 
 iframe#author_madness{
 	width:100%;
@@ -2944,7 +2965,7 @@ div.treehouse-right {
 .resource {
 	text-align: center;
 	background: #DFDFDF;
-	background: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
+	blockbackground: -moz-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
     border: 1px solid #707070 !important;
     background: -webkit-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
 	background: -ms-linear-gradient(center top , #F2F2F2, #CFCFCF) repeat scroll 0 0 #DFDFDF;
@@ -3006,3 +3027,93 @@ body.page-geninfo-read-o .webform-layout-box.horiz > *, .webform-layout-box.equa
 
 }
 
+/****** New Calendar Widget Blocks **********/
+
+#eventsinfo div.title {
+	color: black;
+//	font-weight: bold;
+}
+
+body.page-mob-events #eventsinfo div.title {
+	font-weight: bold;
+}
+
+
+body.page-mob-events #node-42717 span {
+	font-weight: bold;
+	font-size: 24pt;
+}
+
+ body.page-mob-events #node-42717 div {
+	font-size: 24pt;
+} 
+
+#eventsinfo .date {
+	color: black;
+	font-size: 10px;
+	font-weight: bold;
+	float: right;
+}
+
+#eventsinfo .time {
+	color: black;
+	font-size: 10px;
+	font-weight: bold;
+
+}
+
+body.page-childrens-first-theater-experiences #eventsinfo .date,
+body.page-childrens-first-theater-experiences #eventsinfo .time {
+	font-size: 12px;
+
+}
+
+#eventsinfo div.description, 
+#eventsinfo span.branch,
+#eventsinfo span.location,
+#eventsinfo div.image {
+	display: none;
+}	
+
+#eventsinfo div.item {
+	margin-top: 5px;
+	margin-bottom: 0;
+	color: #ffffff;
+	border-bottom: solid silver 1px; 
+}
+
+body.page-mob-events #eventsinfo div.item {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+body.page-childrens-first-theater-experiences #eventsinfo div.item {
+	width: 50%;
+}
+
+p.home-events {
+	text-align: center;
+	border-bottom: solid silver 1px;
+}	
+
+
+/********* Calendar Page *************/
+
+body.section-calendar #page-wrapper
+{
+        width: 100%;
+	height: 100%;
+}
+
+
+/****** Money Events View **********/
+
+div.moneyevent { 
+	border-bottom: 1px solid silver;
+    	color: #ffffff;
+    	margin-bottom: 0;
+    	margin-top: 5px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
